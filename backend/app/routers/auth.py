@@ -9,7 +9,7 @@ from app.db import create_user, get_user_by_email, get_user_by_id, verify_passwo
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
-JWT_SECRET = os.environ.get("JWT_SECRET", "unifai-dev-secret-key-min-32-bytes!")
+JWT_SECRET = os.environ.get("JWT_SECRET", "unifeed-dev-secret-key-min-32-bytes!")
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRY_DAYS = 7
 

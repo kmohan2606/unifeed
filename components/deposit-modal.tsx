@@ -115,7 +115,7 @@ export function DepositModal({ trigger }: { trigger?: React.ReactNode }) {
             {step === "success" && "Deposit Initiated"}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            {step === "form" && "Add funds to your UnifAI account"}
+            {step === "form" && "Add funds to your UniFeed account"}
             {step === "confirm" && "Review your deposit details below"}
             {step === "success" && "Your deposit is being processed"}
           </DialogDescription>

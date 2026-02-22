@@ -51,7 +51,7 @@ export default function LandingPage() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
             <Activity className="h-4 w-4 text-primary-foreground" />
           </div>
-          <span className="text-lg font-semibold tracking-tight text-foreground">UnifAI</span>
+          <span className="text-lg font-semibold tracking-tight text-foreground">UniFeed</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           <a href="#features" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
@@ -264,7 +264,7 @@ export default function LandingPage() {
             <div className="flex h-6 w-6 items-center justify-center rounded bg-primary">
               <Activity className="h-3 w-3 text-primary-foreground" />
             </div>
-            <span className="text-sm font-semibold text-foreground">UnifAI</span>
+            <span className="text-sm font-semibold text-foreground">UniFeed</span>
           </div>
           <p className="text-xs text-muted-foreground">
             Prediction markets involve risk. This platform is for informational purposes.

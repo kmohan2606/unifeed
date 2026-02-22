@@ -13,7 +13,7 @@ export default function SignInPage() {
             </div>
           </Link>
           <h1 className="text-2xl font-bold tracking-tight text-foreground">Welcome back</h1>
-          <p className="text-sm text-muted-foreground">Sign in to your UnifAI account</p>
+          <p className="text-sm text-muted-foreground">Sign in to your UniFeed account</p>
         </div>
         <SignInForm />
         <p className="mt-6 text-center text-sm text-muted-foreground">

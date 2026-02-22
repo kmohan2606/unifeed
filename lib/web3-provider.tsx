@@ -7,8 +7,8 @@ import { getDefaultConfig, RainbowKitProvider, darkTheme } from "@rainbow-me/rai
 import "@rainbow-me/rainbowkit/styles.css"
 
 const config = getDefaultConfig({
-  appName: "UnifAI",
-  projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "unifai-dev-placeholder",
+  appName: "UniFeed",
+  projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "unifeed-dev-placeholder",
   chains: [mainnet, polygon],
   transports: {
     [mainnet.id]: http(),

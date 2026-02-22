@@ -1,4 +1,4 @@
-# UnifAI API (Python backend)
+# UniFeed API (Python backend)
 
 FastAPI backend that serves the same contract the Next.js frontend expects. Use this when you set `NEXT_PUBLIC_API_URL` in the frontend.
 

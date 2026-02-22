@@ -1,5 +1,5 @@
 """
-UnifAI API backend (Python/FastAPI).
+UniFeed API backend (Python/FastAPI).
 Serves the same contract as the Next.js frontend expects when NEXT_PUBLIC_API_URL is set.
 
 Run: uvicorn app.main:app --reload --port 8000
@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers import markets, portfolio, news, auth, bets, wallet
 
 app = FastAPI(
-    title="UnifAI API",
+    title="UniFeed API",
     description="Prediction market aggregator backend. Replace mock data in app.data with your DB or external APIs.",
     version="0.1.0",
 )
@@ -33,7 +33,7 @@ app.include_router(wallet.router)
 
 @app.get("/")
 def root():
-    return {"service": "UnifAI API", "docs": "/docs"}
+    return {"service": "UniFeed API", "docs": "/docs"}
 
 
 @app.get("/health")
