@@ -6,9 +6,10 @@ import json
 from google import genai
 import concurrent.futures
 
-load_dotenv()
-
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+BACKEND_DIR = os.path.dirname(SCRIPT_DIR)
+load_dotenv(os.path.join(BACKEND_DIR, ".env"))
+
 NEWSDATA_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "newsdata.json"))
 REDDITDATA_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "redditdata.json"))
 
@@ -33,7 +34,7 @@ def analyze_sentiment_articles(text):
         return response.text
     except Exception as e:
         #print(f"Error during sentiment analysis of articles: {e}")
-        return f"Sentiment analysis failed due to an error: {e}"
+        return f"Sentiment analysis of articles failed due to an error: {e}"
 
 def analyze_sentiment_discussions(text):
     prompt = f"Analyze the sentiment of the following collection of forum snippets. Respond with 'positive', 'negative', or 'neutral'. Then, respond with a summary of the contents and the sentiment.:\n{text}"
@@ -49,7 +50,7 @@ def analyze_sentiment_discussions(text):
         return response.text
     except Exception as e:
         #print(f"Error during sentiment analysis of discussions: {e}")
-        return f"Sentiment analysis failed due to an error: {e}"
+        return f"Sentiment analysis of discussions failed due to an error: {e}"
 
 def analyze_sentiment_combined(text):
     prompt = f"Discuss how the sentiment you analyzed from recent \

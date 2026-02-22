@@ -3,6 +3,57 @@
     "totalResults": 284,
     "results": [
         {
+            "article_id": "8da3521fad84a8fc99ee829a6bb74d67",
+            "link": "https://www.india.com/news/world/donald-trump-tariff-war-global-tariff-supreme-court-russia-india-pakistan-iran-candana-ukraine-trade-oil-price-white-house-8316796/",
+            "title": "Donald Trump intensifies Tariff War, raises global tariff to 15 percent day after Supreme Court ruling",
+            "description": "\"I, as President of the United States of America, will be, effective immediately, raising the 10% Worldwide Tariff on Countries, many of which have been \u201cripping\u201d the U.S. off for decades, without retribution (until I came along!), to the fully allowed, and legally tested, 15% level,\" Trump wrote on Truth Social.",
+            "content": "ONLY AVAILABLE IN PAID PLANS",
+            "keywords": [
+                "world",
+                "pakistan",
+                "india",
+                "donald trump",
+                "white house",
+                "tariff war",
+                "supreme court",
+                "russia",
+                "global tariff",
+                "oil price",
+                "trade",
+                "ukraine",
+                "candana",
+                "iran"
+            ],
+            "creator": [
+                "victor dasgupta"
+            ],
+            "language": "english",
+            "country": [
+                "india"
+            ],
+            "category": [
+                "world"
+            ],
+            "datatype": "news",
+            "pubDate": "2026-02-21 16:15:52",
+            "pubDateTZ": "UTC",
+            "fetched_at": "2026-02-21 22:53:38",
+            "image_url": "https://static.india.com/wp-content/uploads/2026/02/QT-donald-trump-BEFUN.jpg",
+            "video_url": null,
+            "source_id": "india",
+            "source_name": "India",
+            "source_priority": 1128,
+            "source_url": "https://www.india.com",
+            "source_icon": "https://n.bytvi.com/india.png",
+            "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+            "duplicate": false
+        },
+        {
             "article_id": "9036c077464f032bd4b893297c1e3497",
             "link": "https://timesofindia.indiatimes.com/technology/tech-news/what-barack-obama-said-about-ufo-files-that-made-donald-trump-say-he-made-a-big-mistake/articleshow/128649108.cms",
             "title": "What Barack Obama said about UFO files that made Donald Trump say \"he made a big mistake\"",
@@ -400,50 +451,8 @@
             "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
             "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
             "duplicate": false
-        },
-        {
-            "article_id": "a461b198e47c9b5ebc334712329df3e5",
-            "link": "https://www.marca.com/en/football/mls/2026/02/21/6999a48622601de1168b4582.html",
-            "title": "Donald Trump wants Cristiano Ronaldo in the United States with a message in which he again 'disparages' Messi",
-            "description": "The President of the United States hopes that the Portuguese will arrive in the country soon Leer",
-            "content": "ONLY AVAILABLE IN PAID PLANS",
-            "keywords": [
-                "saudi pro league - english",
-                "donald trump - english",
-                "cristiano ronaldo - english",
-                "mls - english",
-                "soccer"
-            ],
-            "creator": [
-                "ryan mitchell"
-            ],
-            "language": "english",
-            "country": [
-                "spain"
-            ],
-            "category": [
-                "sports"
-            ],
-            "datatype": "news",
-            "pubDate": "2026-02-21 12:32:17",
-            "pubDateTZ": "UTC",
-            "fetched_at": "2026-02-21 13:04:09",
-            "image_url": "https://phantom.estaticos-marca.com/95a2db9364f04e411508689c95449305/resize/1320/f/jpg/assets/multimedia/imagenes/2026/02/21/17716769218041.jpg",
-            "video_url": null,
-            "source_id": "marca",
-            "source_name": "Marca Claro",
-            "source_priority": 426,
-            "source_url": "https://www.marca.com",
-            "source_icon": "https://n.bytvi.com/marca.png",
-            "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-            "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-            "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
-            "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
-            "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
-            "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
-            "duplicate": false
         }
     ],
-    "nextPage": "1771677137287789248",
+    "nextPage": "1771678637711398987",
     "topic": "Donald Trump"
 }
