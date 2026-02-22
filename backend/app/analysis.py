@@ -93,7 +93,7 @@ def analyze_sentiment_combined(text):
         return f"Combined sentiment analysis failed due to an error: {e}"
 
 
-def brave_search_discussions(topic):
+def brave_search_discussions(topic, original_topic=None):
     no_of_discussions = 5
     headers = {
         "Accept": "application/json",
@@ -117,11 +117,11 @@ def brave_search_discussions(topic):
         data['discussions']['results'] = discussions['results'][:no_of_discussions]
     else:
         data['discussions'] = {'results': []}
-    data['topic'] = topic
+    data['topic'] = original_topic if original_topic else topic
 
     with open(REDDITDATA_PATH, "w") as f:
         json.dump(data, f, indent=4)
-    print(data)
+    #print(data)
 
     aggregated_discussion_text = ""
     for discussion in data.get("discussions", {}).get("results", []):
@@ -136,7 +136,7 @@ def brave_search_discussions(topic):
     return response
 
 
-def newsdataio_search_news(topic):
+def newsdataio_search_news(topic, original_topic=None):
     number_of_articles = 4
     number_of_characters_per_article = 700
     params = {
@@ -152,7 +152,7 @@ def newsdataio_search_news(topic):
         params=params,
     )
     newsdata = response.json()
-    newsdata['topic'] = topic
+    newsdata['topic'] = original_topic if original_topic else topic
 
     with open(NEWSDATA_PATH, "w") as f:
         json.dump(newsdata, f, indent=4)
@@ -187,23 +187,23 @@ def newsdataio_search_news(topic):
 
 
 def main(topic):
+    original_topic = topic
+    search_query = extract_search_query(topic)
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-        brave_future = executor.submit(brave_search_discussions, topic)
-        news_future = executor.submit(newsdataio_search_news, topic)
-
-        brave_response = brave_future.result()
-        news_response = news_future.result()
-
-    combined = analyze_sentiment_combined(f"Online Discussion Sentiment Analysis: {brave_response}\n\nNews Article Sentiment Analysis: {news_response}")
+        brave_future = executor.submit(brave_search_discussions, search_query, original_topic)
+        news_future = executor.submit(newsdataio_search_news, search_query, original_topic)
+    brave_response = brave_future.result()
+    news_response = news_future.result()
+    combined = analyze_sentiment_combined(
+        f"Online Discussion Sentiment Analysis: {brave_response}\n\nNews Article Sentiment Analysis: {news_response}"
+    )
     print(f'\n\nCombined analysis: {combined}')
     return combined
 
 
 if __name__ == "__main__":
-    topic = "Will global temperature increase by more than 1.24ºC in February 2026?"
-
-    topic = extract_search_query(topic)
-    print(topic)
+    topic = "When will Cluely officially announce an IPO?"
     #brave_search_discussions(extract_search_query(topic))
     #newsdataio_search_news(topic)
     #main(topic)
+    extract_search_query(topic)

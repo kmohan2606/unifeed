@@ -55,6 +55,9 @@ export default function MarketPage({ params }: { params: Promise<{ id: string }>
     fetchMarket()
   }, [id])
 
+  console.log("analysisNews", analysisNews)
+  console.log("analysisDiscussions", analysisDiscussions)
+
   if (loading || !market) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">

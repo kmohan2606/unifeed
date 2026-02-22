@@ -82,7 +82,12 @@ export interface AnalysisDiscussion {
   num_answers: number
 }
 
-async function pollUntilReady<T>(url: string, extract: (data: any) => T, maxAttempts = 15, interval = 2000): Promise<T | null> {
+async function pollUntilReady<T>(
+  url: string,
+  extract: (data: any) => T | null,
+  maxAttempts = 15,
+  interval = 2000
+): Promise<T | null> {
   for (let i = 0; i < maxAttempts; i++) {
     try {
       const res = await fetch(url, { cache: "no-store" })
@@ -91,7 +96,10 @@ async function pollUntilReady<T>(url: string, extract: (data: any) => T, maxAtte
         continue
       }
       const data = await res.json()
-      if (data.status === "ready") {
+      if (
+        (data.status === "ready" || data.status === "success") &&
+        extract(data)
+      ) {
         return extract(data)
       }
     } catch {
@@ -108,14 +116,17 @@ export async function getAnalysisNews(topic: string): Promise<AnalysisNewsItem[]
   const results = await pollUntilReady<AnalysisNewsItem[]>(
     url,
     (data) => {
-      const raw = data.newsdata?.results ?? []
-      return raw.map((item: any) => ({
-        title: item.title,
-        link: item.link,
-        source_name: item.source_name,
-        pubDate: item.pubDate,
-        description: item.description,
-      }))
+      const raw = data.results ?? []
+      if (raw.length > 0) {
+        return raw.map((item: any) => ({
+          title: item.title,
+          link: item.link,
+          source_name: item.source_name,
+          pubDate: item.pubDate,
+          description: item.description,
+        }))
+      }
+      return null
     }
   )
   return results ?? []
@@ -127,16 +138,19 @@ export async function getAnalysisDiscussions(topic: string): Promise<AnalysisDis
   const results = await pollUntilReady<AnalysisDiscussion[]>(
     url,
     (data) => {
-      const raw = data.redditdata?.discussions?.results ?? []
-      return raw.map((r: any) => ({
-        title: r.title,
-        url: r.url,
-        description: r.description,
-        age: r.age,
-        forum_name: r.data?.forum_name ?? "",
-        score: r.data?.score ?? "0",
-        num_answers: r.data?.num_answers ?? 0,
-      }))
+      const raw = data.discussions?.results ?? []
+      if (raw.length > 0) {
+        return raw.map((r: any) => ({
+          title: r.title,
+          url: r.url,
+          description: r.description,
+          age: r.age,
+          forum_name: r.data?.forum_name ?? "",
+          score: r.data?.score ?? "0",
+          num_answers: r.data?.num_answers ?? 0,
+        }))
+      }
+      return null
     }
   )
   return results ?? []

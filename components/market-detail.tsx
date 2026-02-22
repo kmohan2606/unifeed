@@ -14,8 +14,10 @@ import { Orderbook } from "@/components/orderbook"
 import { MarketDescription } from "@/components/market-description"
 import { MarketSentiment } from "@/components/market_analysis"
 import { AnalysisNewsPanel } from "@/components/analysis-news-panel"
+import { useAnalysisData } from "@/hooks/use-analysis-data"
 import type { Market, NewsItem } from "@/lib/types"
-import type { AnalysisNewsItem, AnalysisDiscussion } from "@/lib/api"
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000"
 
 function formatVolume(val: number) {
   if (val >= 1_000_000) return `$${(val / 1_000_000).toFixed(1)}M`
@@ -37,17 +39,61 @@ function useDaysUntil(date: string) {
   return label
 }
 
+// ── Kick off analysis and track the topic being analyzed ─────────
+
+function useMarketAnalysis(market: Market) {
+  const [topic, setTopic] = useState<string | null>(null)
+  const [sentiment, setSentiment] = useState<string>("")
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function run() {
+      try {
+        const res = await fetch(
+          `${API_URL}/analyze/?topic=${encodeURIComponent(market.title)}`,
+          { method: "POST" }
+        )
+        if (cancelled) return
+        const data = await res.json()
+        // The /analyze/ endpoint returns { result: "<sentiment string>" }
+        setSentiment(data.result ?? "")
+        // Only start polling once the backend has kicked off the scrape
+        setTopic(market.title)
+      } catch (err) {
+        console.error("[useMarketAnalysis] failed to start analysis:", err)
+      }
+    }
+
+    run()
+    return () => { cancelled = true }
+  }, [market.title])
+
+  return { topic, sentiment }
+}
+
+// ─────────────────────────────────────────────────────────────────
+
 interface MarketDetailProps {
   market: Market
   news: NewsItem[]
-  sentiment: string
-  analysisNews: AnalysisNewsItem[]
-  analysisDiscussions: AnalysisDiscussion[]
 }
 
-export function MarketDetail({ market, news, sentiment, analysisNews, analysisDiscussions }: MarketDetailProps) {
+export function MarketDetail({ market, news }: MarketDetailProps) {
   const isPositive = market.change24h >= 0
   const daysLabel = useDaysUntil(market.endDate)
+
+  // 1. Trigger analysis + get sentiment
+  const { topic, sentiment } = useMarketAnalysis(market)
+
+  // 2. Poll for news / discussion data only after analysis has started
+  const {
+    news: analysisNews,
+    discussions: analysisDiscussions,
+    newsReady,
+    discussionsReady,
+    error: analysisError,
+  } = useAnalysisData(topic)
 
   return (
     <div className="flex flex-col gap-6">
@@ -169,7 +215,13 @@ export function MarketDetail({ market, news, sentiment, analysisNews, analysisDi
         {/* Sidebar */}
         <div className="flex flex-col gap-6">
           <OrderForm market={market} />
-          <AnalysisNewsPanel news={analysisNews} discussions={analysisDiscussions} />
+          <AnalysisNewsPanel
+            news={analysisNews}
+            discussions={analysisDiscussions}
+          />
+          {analysisError && (
+            <p className="text-xs text-destructive">{analysisError}</p>
+          )}
         </div>
       </div>
     </div>
