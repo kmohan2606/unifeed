@@ -6,7 +6,7 @@ import { TopNav } from "@/components/top-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { MarketDetail } from "@/components/market-detail"
 import { AuthGuard } from "@/components/auth-guard"
-import { getMarketById, getNewsForMarket, getMarketSentiment } from "@/lib/api"
+import { getMarketById, getNewsForMarket } from "@/lib/api"
 import type { NewsItem } from "@/lib/types"
 
 // Simple spinner component
@@ -53,7 +53,6 @@ export default function MarketPage({ params }: { params: Promise<{ id: string }>
       </div>
     )
   }
-  const sentiment = await getMarketSentiment(market.id)
 
   return (
     <AuthGuard>
@@ -63,7 +62,7 @@ export default function MarketPage({ params }: { params: Promise<{ id: string }>
           <div className="mx-auto max-w-7xl">
             <MarketDetail
               market={market}
-              news={relatedNews} sentiment={sentiment}
+              news={relatedNews}
             />
           </div>
         </main>

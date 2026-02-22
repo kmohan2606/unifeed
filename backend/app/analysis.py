@@ -43,15 +43,15 @@ def extract_search_query(topic: str) -> str:
 
 def analyze_sentiment_articles(text):
     prompt = f"You are a finanical analyst/short-term market analyst. Assuming both sentiments have properly \
-    generated, analyze the sentiment of the following collection \
+    generated with no errors, analyze the general sentiment of the following collection \
         of article snippets. Respond with 'positive', 'negative', \
             or 'neutral'. Then, respond with a summary of the \
-                topic, the current news around the topic, and the current sentiment in addition \
+                topic, current news around the topic, and the current sentiment in addition \
                 to divergence analysis between forum posts and news articles. If one \
                 sentiment hasn't generated, \
                 just mention how one sentiment failed due to server issues and relay \
                 what you said for the other sentiment.\
-                    Respond without bias.:\n{text}"
+                    Respond without bias. Aim for 70-100 words:\n{text}"
     try:
         print("Analyzing sentiment of articles...")
         response = client.models.generate_content(
@@ -201,6 +201,7 @@ def main(topic):
         news_future = executor.submit(newsdataio_search_news, search_query, original_topic)
     brave_response = brave_future.result()
     news_response = news_future.result()
+    print(news_response)
     combined = analyze_sentiment_combined(
         f"Online Discussion Sentiment Analysis: {brave_response}\n\nNews Article Sentiment Analysis: {news_response}"
     )

@@ -1,7 +1,169 @@
 {
     "status": "success",
-    "totalResults": 0,
-    "results": [],
+    "totalResults": 4,
+    "results": [
+        {
+            "article_id": "8e87b0ca836fd21a6eb2fb0166c3e2f4",
+            "link": "https://www.yardbarker.com/nba/articles/we_may_not_close_with_him_golden_state_warriors_coach_details_draymond_greens_reduced_role_moving_forward/s1_17382_43497630",
+            "title": "'We May Not Close With Him' \u2013 Golden State Warriors Coach Details Draymond Green\u2019s Reduced Role Moving Forward",
+            "description": "Draymond Green only played 19 minutes in the Golden State Warriors\u2019 121-110 home loss against the Boston Celtics on Thursday evening, and head coach Steve Kerr hinted that this may be the norm for the rest of the 2025-26 campaign.",
+            "content": "ONLY AVAILABLE IN PAID PLANS",
+            "keywords": [
+                "draymond green",
+                "golden state warriors",
+                "nba"
+            ],
+            "creator": [
+                "jordan samar, hardwood heroics"
+            ],
+            "language": "english",
+            "country": [
+                "united states of america"
+            ],
+            "category": [
+                "sports"
+            ],
+            "datatype": "news",
+            "pubDate": "2026-02-21 09:29:08",
+            "pubDateTZ": "UTC",
+            "fetched_at": "2026-02-21 09:40:36",
+            "image_url": "https://www.yardbarker.com/media/8/a/8a46cd3f8addfaa4f9b029b70a9ea99f56870624/thumb_16x9/USATSI_28214595-900x600.jpg",
+            "video_url": null,
+            "source_id": "yardbarker",
+            "source_name": "Yardbarker",
+            "source_priority": 92706,
+            "source_url": "https://www.yardbarker.com",
+            "source_icon": "https://n.bytvi.com/yardbarker.png",
+            "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+            "duplicate": false
+        },
+        {
+            "article_id": "dd2948911adc48b9edae52df6f80a6fe",
+            "link": "https://sports.yahoo.com/articles/golden-state-warriors-jersey-history-020040694.html",
+            "title": "Golden State Warriors jersey history - No. 45 - Purvis Short (1978-87)",
+            "description": "During his time suiting up for the Warriors, Short wore only jersey No. 45 and put up 19.4 points, 4.8 rebounds, 2.8 assists, and 1.2 steals per game.",
+            "content": "ONLY AVAILABLE IN PAID PLANS",
+            "keywords": [
+                "nba",
+                "sports"
+            ],
+            "creator": [
+                "warriors wire"
+            ],
+            "language": "english",
+            "country": [
+                "united states of america"
+            ],
+            "category": [
+                "sports",
+                "breaking"
+            ],
+            "datatype": "news",
+            "pubDate": "2026-02-21 02:00:40",
+            "pubDateTZ": "UTC",
+            "fetched_at": "2026-02-21 02:30:58",
+            "image_url": "https://s.yimg.com/ny/api/res/1.2/tnEgEYp8EiBnV0nptYQnJQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD05NDM7Y2Y9d2VicA--/https://media.zenfs.com/en/warriors_wire_usa_today_sports_articles_759/d8dcaa5289e9d9b64bc18c1ba2345769",
+            "video_url": null,
+            "source_id": "yahoo",
+            "source_name": "Yahoo! News",
+            "source_priority": 17,
+            "source_url": "https://news.yahoo.com",
+            "source_icon": "https://n.bytvi.com/yahoo.png",
+            "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+            "duplicate": false
+        },
+        {
+            "article_id": "f5b185797f7f10838fdfd9c0936a8037",
+            "link": "https://sports.yahoo.com/articles/kristaps-porzingis-praises-golden-state-230052671.html",
+            "title": "Kristaps Porzingis praises Golden State Warriors offensive system",
+            "description": "Kristaps Porzingis is happy with the Golden State Warriors offensive system",
+            "content": "ONLY AVAILABLE IN PAID PLANS",
+            "keywords": [
+                "nba",
+                "sports"
+            ],
+            "creator": [
+                "warriors wire"
+            ],
+            "language": "english",
+            "country": [
+                "united states of america"
+            ],
+            "category": [
+                "sports",
+                "breaking"
+            ],
+            "datatype": "news",
+            "pubDate": "2026-02-20 23:00:52",
+            "pubDateTZ": "UTC",
+            "fetched_at": "2026-02-20 23:31:12",
+            "image_url": "https://s.yimg.com/ny/api/res/1.2/fvLBGEYmp.QvE68Xf1VX2g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA7Y2Y9d2VicA--/https://media.zenfs.com/en/warriors_wire_usa_today_sports_articles_759/fdbf12b1f71dd69e2a9817e082cde3c9",
+            "video_url": null,
+            "source_id": "yahoo",
+            "source_name": "Yahoo! News",
+            "source_priority": 17,
+            "source_url": "https://news.yahoo.com",
+            "source_icon": "https://n.bytvi.com/yahoo.png",
+            "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+            "duplicate": false
+        },
+        {
+            "article_id": "d3a30f6766d55371ee964a591b1855d9",
+            "link": "https://www.yardbarker.com/nba/articles/golden_state_warriors_owner_joe_lacob_addresses_trade_deadline_speculation_involving_draymond_green_he_was_never_discussed/s1_17670_43496351",
+            "title": "Golden State Warriors Owner Joe Lacob Addresses Trade Deadline Speculation Involving Draymond Green: \u2018He Was Never Discussed\u2019",
+            "description": "The Golden State Warriors didn\u2019t attempt to move Draymond Green at this year\u2019s NBA trade deadline. That\u2019s at least what owner Joe Lacob told Tim Kawakami of the San Francisco Standard.",
+            "content": "ONLY AVAILABLE IN PAID PLANS",
+            "keywords": [
+                "joe lacob",
+                "golden state warriors",
+                "draymond green",
+                "nba"
+            ],
+            "creator": [
+                "ashish mathur, dallas hoops journal"
+            ],
+            "language": "english",
+            "country": [
+                "united states of america"
+            ],
+            "category": [
+                "sports"
+            ],
+            "datatype": "news",
+            "pubDate": "2026-02-20 21:38:05",
+            "pubDateTZ": "UTC",
+            "fetched_at": "2026-02-20 22:11:00",
+            "image_url": "https://www.yardbarker.com/media/4/0/40e6b2c00960287a578c558d3446b8924343199b/thumb_16x9/feb-11-2026-san-francisco-california-usa-golden.jpg?v=1",
+            "video_url": null,
+            "source_id": "yardbarker",
+            "source_name": "Yardbarker",
+            "source_priority": 92706,
+            "source_url": "https://www.yardbarker.com",
+            "source_icon": "https://n.bytvi.com/yardbarker.png",
+            "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+            "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+            "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+            "duplicate": false
+        }
+    ],
     "nextPage": null,
-    "topic": "Will PFK CSKA Moskva vs. FK Dinamo Moskva end in a draw?"
+    "topic": "Will the Golden State Warriors have the worst record in the NBA?"
 }

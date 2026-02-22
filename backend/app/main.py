@@ -6,7 +6,7 @@ import json
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import markets, portfolio, news, auth, bets, wallet
+from app.routers import markets, portfolio, news, auth, bets, wallet, swap, settings
 from app.analysis import main as analyze_main
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -35,7 +35,6 @@ app.include_router(bets.router)
 app.include_router(wallet.router)
 app.include_router(swap.router)
 app.include_router(settings.router)
-app.include_router(api_server.router)
 
 
 @app.get("/")

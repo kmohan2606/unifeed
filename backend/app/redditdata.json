@@ -1,7 +1,7 @@
 {
     "type": "search",
     "query": {
-        "original": "Moscow Derby",
+        "original": "Golden State Warriors",
         "show_strict_warning": false,
         "is_navigational": false,
         "is_geolocal": true,
@@ -18,7 +18,152 @@
         "state": ""
     },
     "discussions": {
-        "results": []
+        "type": "search",
+        "results": [
+            {
+                "title": "[Highlight] Kristaps Porzingis makes his Golden State Warriors debut",
+                "url": "https://www.reddit.com/r/nba/comments/1ra8xfi/highlight_kristaps_porzingis_makes_his_golden/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "He was very productive even with his minutes restriction, unfortunately he might be on one for the rest of his career",
+                "fetched_content_timestamp": 1771647010,
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a nba  \u203a comments  \u203a 1ra8xfi  \u203a highlight_kristaps_porzingis_makes_his_golden"
+                },
+                "age": "2 days ago",
+                "data": {
+                    "forum_name": "r/nba",
+                    "num_answers": 10,
+                    "score": "9",
+                    "title": "[Highlight] Kristaps Porzingis makes his Golden State Warriors debut",
+                    "top_comment": "He was very productive even with his minutes restriction, unfortunately he might be on one for the rest of his career"
+                }
+            },
+            {
+                "title": "I do not pity Steph Curry his the Golden State Warriors.",
+                "url": "https://www.reddit.com/r/billsimmons/comments/1qj4fuf/i_do_not_pity_steph_curry_his_the_golden_state/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "This is just how things end most of the time.",
+                "fetched_content_timestamp": 1770678922,
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a billsimmons  \u203a comments  \u203a 1qj4fuf  \u203a i_do_not_pity_steph_curry_his_the_golden_state"
+                },
+                "age": "January 21, 2026",
+                "data": {
+                    "forum_name": "r/billsimmons",
+                    "num_answers": 175,
+                    "score": "197",
+                    "title": "I do not pity Steph Curry his the Golden State Warriors.",
+                    "top_comment": "This is just how things end most of the time."
+                }
+            },
+            {
+                "title": "Why does Steph Curry want to keep playing for Golden State? He is still good enough to help a contender win titles. This isn't \"Loyalty\" it's just an ASININE waste of time and Warriors fans should WANT him to go to a contender. The Warriors young core is GARBAGE they are COOKED for the next Decade",
+                "url": "https://www.reddit.com/r/NBATalk/comments/1pmyjl8/why_does_steph_curry_want_to_keep_playing_for/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "Probably because he's treated like a god in Oakland and San Francisco",
+                "fetched_content_timestamp": 1771297593,
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a NBATalk  \u203a comments  \u203a 1pmyjl8  \u203a why_does_steph_curry_want_to_keep_playing_for"
+                },
+                "age": "December 15, 2025",
+                "data": {
+                    "forum_name": "r/NBATalk",
+                    "num_answers": 45,
+                    "score": "0",
+                    "title": "Why does Steph Curry want to keep playing for Golden State? He is still good enough to help a contender win titles. This isn't \"Loyalty\" it's just an ASININE waste of time and Warriors fans should WANT him to go to a contender. The Warriors young core is GARBAGE they are COOKED for the next Decade",
+                    "top_comment": "Probably because he's treated like a god in Oakland and San Francisco"
+                }
+            },
+            {
+                "title": "Do you think there's a way to get Steph Curry help in Golden State or does he seriously need to think about leaving? Is he better suited to join another team?",
+                "url": "https://www.reddit.com/r/Basketball/comments/1hwuw63/do_you_think_theres_a_way_to_get_steph_curry_help/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "I think Steph Curry and ultimately Warrior fans need to be satisfied with the champions and dynasty they already have. It\u2019s other teams turn to win now.",
+                "fetched_content_timestamp": 1769612958,
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a Basketball  \u203a comments  \u203a 1hwuw63  \u203a do_you_think_theres_a_way_to_get_steph_curry_help"
+                },
+                "age": "January 8, 2025",
+                "data": {
+                    "forum_name": "r/Basketball",
+                    "num_answers": 57,
+                    "score": "0",
+                    "title": "Do you think there's a way to get Steph Curry help in Golden State or does he seriously need to think about leaving? Is he better suited to join another team?",
+                    "question": "<p>Reoccurring theme with the Warriors is Steph doesn&#39;t have enough help and has to carry the team. Its just mindboggling how you have the best shooter in the world and can&#39;t get him quality shooters around him. I don&#39;t know if you just get the right players around him or if there&#39;s nothing the Warriors can do.</p><p>It feels like the ship has sailed in Golden State and Steph would be better suited as a #2 on a contender. I feel he&#39;s almost in a similar situation as Klay where he has to choose his next move. He&#39;s got some heavy thinking to do because as much as he wants to retire as a Warrior I&#39;m certain he doesn&#39;t want to go out like this and just put up stats on a weak team.</p>",
+                    "top_comment": "I think Steph Curry and ultimately Warrior fans need to be satisfied with the champions and dynasty they already have. It\u2019s other teams turn to win now."
+                }
+            },
+            {
+                "title": "GAME THREAD: Phoenix Suns (24-22) @ Golden State Warriors (24-23) - (February 01, 2025)",
+                "url": "https://www.reddit.com/r/nba/comments/1ievpne/game_thread_phoenix_suns_2422_golden_state/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "Jesus Christ can we please stop getting Bob Myers casting Warriors games?",
+                "fetched_content_timestamp": 1767284534,
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a nba  \u203a comments  \u203a 1ievpne  \u203a game_thread_phoenix_suns_2422_golden_state"
+                },
+                "age": "December 11, 2024",
+                "data": {
+                    "forum_name": "r/nba",
+                    "num_answers": 94,
+                    "score": "8",
+                    "title": "GAME THREAD: Phoenix Suns (24-22) @ Golden State Warriors (24-23) - (February 01, 2025)",
+                    "question": "<h2 class=\"text-18-scalable xs:text-20-scalable\">General Information</h2><pre>\n**TIME**     |**MEDIA**                            |**Team Subreddits**        |\n:------------|:------------------------------------|:-------------------|\n10:00 PM Eastern |**Game Preview**: [NBA.com](https://www.nba.com/game/PHX-vs-GSW-0022400685/preview) | /r/suns          |\n09:00 PM Central |**Game Charts**: [NBA.com](https://www.nba.com/game/PHX-vs-GSW-0022400685/game-charts) | /r/warriors           |\n08:00 PM Mountain|**Play By Play**: [NBA.com](https://www.nba.com/game/PHX-vs-GSW-0022400685/play-by-play)|               |\n07:00 PM Pacific |**Box Score**: [NBA.com](https://www.nba.com/game/PHX-vs-GSW-0022400685/boxscore) |                 |</pre><p><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://reddit-stream.com/comments/auto\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Reddit Stream</a> (You must click this link from the comment page.)</p>",
+                    "top_comment": "Jesus Christ can we please stop getting Bob Myers casting Warriors games?"
+                }
+            }
+        ],
+        "mutated_by_goggles": false
     },
-    "topic": "Will PFK CSKA Moskva vs. FK Dinamo Moskva end in a draw?"
+    "topic": "Will the Golden State Warriors have the worst record in the NBA?"
 }
