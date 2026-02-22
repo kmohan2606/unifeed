@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
@@ -27,22 +28,26 @@ import {
 } from "lucide-react";
 import { clearToken, getToken } from "@/lib/api/auth";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useAccount, useDisconnect } from "wagmi";
+import { useAccount, useDisconnect, useConfig } from "wagmi";
+import { getBalance } from "@wagmi/core";
 import { apiUrl } from "@/lib/api/config";
 import { CHAINS, TOKENS_BY_CHAIN } from "@/lib/swap-utils";
 
 const PAYMENT_TOKEN_OPTIONS = CHAINS.flatMap((chain) =>
   (TOKENS_BY_CHAIN[chain.id] ?? []).map((t) => ({
     value: `${chain.id}|${t.address}`,
-    label: `${t.symbol} (${chain.name})`,
+    label: `${t.symbol} on ${chain.name}`,
     chainId: chain.id,
     address: t.address,
+    isNative: t.isNative,
+    symbol: t.symbol,
   })),
 );
 
 export function SettingsView() {
   const [routingPreference, setRoutingPreference] = useState("best-price");
   const [displayCurrency, setDisplayCurrency] = useState("usd");
+  const [autoConvert, setAutoConvert] = useState(true);
   const [notifications, setNotifications] = useState(true);
   const [savedWallet, setSavedWallet] = useState<{
     address: string;
@@ -51,9 +56,59 @@ export function SettingsView() {
   const [preferredPaymentToken, setPreferredPaymentToken] =
     useState<string>("");
   const [kalshiBalance, setKalshiBalance] = useState(500);
+  const [kalshiApiKey, setKalshiApiKey] = useState("");
+  const [kalshiApiSecret, setKalshiApiSecret] = useState("");
   const [settingsSaving, setSettingsSaving] = useState(false);
 
   const { address, chain, isConnected } = useAccount();
+  const config = useConfig();
+  const [availableTokens, setAvailableTokens] = useState<typeof PAYMENT_TOKEN_OPTIONS>(PAYMENT_TOKEN_OPTIONS);
+  const [isLoadingTokens, setIsLoadingTokens] = useState(false);
+
+  useEffect(() => {
+    if (!address) {
+      setAvailableTokens(PAYMENT_TOKEN_OPTIONS);
+      return;
+    }
+
+    let isMounted = true;
+    setIsLoadingTokens(true);
+
+    Promise.all(
+      PAYMENT_TOKEN_OPTIONS.map(async (opt) => {
+        try {
+          const bal = await getBalance(config, {
+            address,
+            chainId: opt.chainId as any,
+            token: opt.isNative ? undefined : (opt.address as `0x${string}`),
+          });
+          const formattedBal = Number(bal.value) / 10 ** bal.decimals;
+          return { ...opt, valueNum: Number(bal.value), formattedBal };
+        } catch (err) {
+          return { ...opt, valueNum: 0, formattedBal: 0 };
+        }
+      })
+    ).then((results) => {
+      if (isMounted) {
+        const positive = results.filter((r) => r.valueNum > 0);
+        const mapped = positive.map((r) => ({
+          ...r,
+          label: `${r.formattedBal.toFixed(4)} ${r.symbol} on ${CHAINS.find(c => c.id === r.chainId)?.name}`
+        }));
+
+        if (mapped.length > 0) {
+          setAvailableTokens(mapped);
+        } else {
+          setAvailableTokens(PAYMENT_TOKEN_OPTIONS);
+        }
+        setIsLoadingTokens(false);
+      }
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [address, config]);
   const { disconnect } = useDisconnect();
 
   const syncWalletToBackend = useCallback(
@@ -73,7 +128,7 @@ export function SettingsView() {
           const w = await res.json();
           setSavedWallet(w);
         }
-      } catch {}
+      } catch { }
     },
     [],
   );
@@ -84,7 +139,7 @@ export function SettingsView() {
       await fetch(apiUrl("/api/wallet"), {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
-      }).catch(() => {});
+      }).catch(() => { });
     }
     disconnect();
     setSavedWallet(null);
@@ -100,7 +155,7 @@ export function SettingsView() {
       .then((w) => {
         if (w && w.address) setSavedWallet(w);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -119,9 +174,32 @@ export function SettingsView() {
             `${s.preferred_payment_chain_id}|${s.preferred_payment_token}`,
           );
         }
+        if (s.kalshi_api_key) setKalshiApiKey(s.kalshi_api_key);
+        if (s.kalshi_api_secret) setKalshiApiSecret(s.kalshi_api_secret);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
+
+  const saveKalshiKey = async () => {
+    const token = getToken();
+    if (!token) return;
+    setSettingsSaving(true);
+    try {
+      await fetch(apiUrl("/api/settings"), {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          kalshi_api_key: kalshiApiKey || null,
+          kalshi_api_secret: kalshiApiSecret || null,
+        }),
+      });
+    } finally {
+      setSettingsSaving(false);
+    }
+  };
 
   useEffect(() => {
     const token = getToken();
@@ -131,7 +209,7 @@ export function SettingsView() {
     })
       .then((r) => r.json())
       .then((b) => setKalshiBalance(b.kalshiBalance ?? 500))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   const savePreferredToken = async (value: string) => {
@@ -154,6 +232,7 @@ export function SettingsView() {
           preferred_payment_chain_id: chainId,
         }),
       });
+      window.dispatchEvent(new Event("settingsUpdated"));
     } finally {
       setSettingsSaving(false);
     }
@@ -342,7 +421,7 @@ export function SettingsView() {
                       <SelectValue placeholder="Select token" />
                     </SelectTrigger>
                     <SelectContent className="border-border bg-card text-foreground">
-                      {PAYMENT_TOKEN_OPTIONS.map((opt) => (
+                      {availableTokens.map((opt) => (
                         <SelectItem key={opt.value} value={opt.value}>
                           {opt.label}
                         </SelectItem>

@@ -50,7 +50,11 @@ export async function getMe(token: string): Promise<AuthUser | null> {
     const res = await fetch(apiUrl("/api/auth/me"), {
       headers: { Authorization: `Bearer ${token}` },
     })
-    if (!res.ok) return null
+    if (!res.ok) {
+      // Token is invalid or the DB was wiped — clear the stale cookie
+      clearToken()
+      return null
+    }
     const data = await res.json()
     return data.user
   } catch {

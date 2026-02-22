@@ -2,17 +2,19 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { WagmiProvider, http } from "wagmi"
-import { mainnet, polygon } from "wagmi/chains"
+import { mainnet, polygon, base, arbitrum } from "wagmi/chains"
 import { getDefaultConfig, RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit"
 import "@rainbow-me/rainbowkit/styles.css"
 
 const config = getDefaultConfig({
   appName: "UniFeed",
   projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "unifeed-dev-placeholder",
-  chains: [mainnet, polygon],
+  chains: [mainnet, polygon, base, arbitrum],
   transports: {
     [mainnet.id]: http(),
     [polygon.id]: http(),
+    [base.id]: http(),
+    [arbitrum.id]: http(),
   },
 })
 

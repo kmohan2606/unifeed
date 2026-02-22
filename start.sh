@@ -7,6 +7,9 @@ if [ ! -d "node_modules" ]; then
   npm install
 fi
 
+# Wipe the database so login state is never persisted across restarts
+rm -f backend/app/data/data/users.db
+
 # Start the Python backend
 cd backend
 if [ ! -d ".venv" ]; then

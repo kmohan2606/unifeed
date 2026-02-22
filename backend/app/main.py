@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 # Ensure the backend always reads project-root .env
 load_dotenv(dotenv_path=Path(__file__).resolve().parents[2] / ".env")
 
-from app.routers import markets, portfolio, news, auth, bets, wallet, swap
+from app.routers import markets, portfolio, news, auth, bets, wallet, swap, settings
 from app import api_server
 
 app = FastAPI(
@@ -31,6 +31,7 @@ app.include_router(news.router)
 app.include_router(bets.router)
 app.include_router(wallet.router)
 app.include_router(swap.router)
+app.include_router(settings.router)
 app.include_router(api_server.router)
 
 

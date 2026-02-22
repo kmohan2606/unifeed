@@ -208,3 +208,47 @@ def remove_wallet(user_id):
     conn.execute("DELETE FROM wallets WHERE user_id = ?", (user_id,))
     conn.commit()
     conn.close()
+
+
+# ── Settings helpers ──────────────────────────────────────────
+
+def get_user_settings(user_id):
+    conn = _connect()
+    row = conn.execute("SELECT * FROM user_settings WHERE user_id = ?", (user_id,)).fetchone()
+    conn.close()
+    return dict(row) if row else None
+
+
+def upsert_user_settings(user_id, kalshi_api_key=None, kalshi_api_secret=None, preferred_payment_token=None, preferred_payment_chain_id=None):
+    conn = _connect()
+    try:
+        current = conn.execute("SELECT * FROM user_settings WHERE user_id = ?", (user_id,)).fetchone()
+        if not current:
+            conn.execute(
+                "INSERT INTO user_settings (user_id, kalshi_api_key, kalshi_api_secret, preferred_payment_token, preferred_payment_chain_id) VALUES (?, ?, ?, ?, ?)",
+                (user_id, kalshi_api_key, kalshi_api_secret, preferred_payment_token, preferred_payment_chain_id)
+            )
+        else:
+            updates = []
+            params = []
+            if kalshi_api_key is not None:
+                updates.append("kalshi_api_key = ?")
+                params.append(kalshi_api_key)
+            if kalshi_api_secret is not None:
+                updates.append("kalshi_api_secret = ?")
+                params.append(kalshi_api_secret)
+            if preferred_payment_token is not None:
+                updates.append("preferred_payment_token = ?")
+                params.append(preferred_payment_token)
+            if preferred_payment_chain_id is not None:
+                updates.append("preferred_payment_chain_id = ?")
+                params.append(preferred_payment_chain_id)
+            if updates:
+                params.append(user_id)
+                conn.execute(f"UPDATE user_settings SET {', '.join(updates)} WHERE user_id = ?", tuple(params))
+        conn.commit()
+        
+        row = conn.execute("SELECT * FROM user_settings WHERE user_id = ?", (user_id,)).fetchone()
+        return dict(row) if row else None
+    finally:
+        conn.close()
