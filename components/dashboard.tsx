@@ -12,6 +12,7 @@ const PAGE_SIZE = 25;
 
 export function Dashboard() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
   const [markets, setMarkets] = useState<Market[]>([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -20,10 +21,10 @@ export function Dashboard() {
   const initialLoad = useRef(true);
 
   const fetchPage = useCallback(
-    async (cat: string, pg: number, append: boolean) => {
+    async (cat: string, pg: number, append: boolean, q: string) => {
       setIsLoading(true);
       try {
-        const data = await getMarkets(cat, pg, PAGE_SIZE);
+        const data = await getMarkets(cat, pg, PAGE_SIZE, q);
         setMarkets((prev) =>
           append ? [...prev, ...data.markets] : data.markets,
         );
@@ -40,8 +41,20 @@ export function Dashboard() {
   );
 
   useEffect(() => {
-    fetchPage(activeCategory, 1, false);
-  }, [activeCategory, fetchPage]);
+    fetchPage(activeCategory, 1, false, searchQuery);
+  }, [activeCategory, searchQuery, fetchPage]);
+
+  // Listen for search events dispatched by TopNav
+  useEffect(() => {
+    function handleSearch(e: Event) {
+      const q = (e as CustomEvent<string>).detail ?? "";
+      // Only reset page — don't wipe markets; the fetch useEffect will replace them
+      setSearchQuery(q);
+      setPage(1);
+    }
+    window.addEventListener("marketSearch", handleSearch);
+    return () => window.removeEventListener("marketSearch", handleSearch);
+  }, []);
 
   function handleCategoryChange(cat: string) {
     if (cat === activeCategory) return;
@@ -52,7 +65,7 @@ export function Dashboard() {
 
   function handleLoadMore() {
     if (page < totalPages && !isLoading) {
-      fetchPage(activeCategory, page + 1, true);
+      fetchPage(activeCategory, page + 1, true, searchQuery);
     }
   }
 
@@ -67,6 +80,11 @@ export function Dashboard() {
         <p className="text-sm text-muted-foreground">
           {total.toLocaleString()} aggregated prediction markets across Kalshi
           and Polymarket
+          {searchQuery && (
+            <span className="ml-1 text-foreground font-medium">
+              — results for &quot;{searchQuery}&quot;
+            </span>
+          )}
         </p>
       </div>
 
@@ -90,7 +108,9 @@ export function Dashboard() {
       {!isLoading && markets.length === 0 && (
         <div className="flex flex-col items-center justify-center rounded-lg border border-border bg-card py-16">
           <p className="text-sm text-muted-foreground">
-            No markets found for this category.
+            {searchQuery
+              ? `No markets found for "${searchQuery}".`
+              : "No markets found for this category."}
           </p>
         </div>
       )}

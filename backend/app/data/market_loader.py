@@ -168,11 +168,15 @@ def get_market_by_id(market_id):
     return _index.get(market_id)
 
 
-def get_markets_page(category=None, page=1, limit=25):
+def get_markets_page(category=None, q=None, page=1, limit=25):
     if category and category != "All":
         filtered = [m for m in all_markets if m["category"] == category]
     else:
         filtered = all_markets
+
+    if q:
+        q_lower = q.lower()
+        filtered = [m for m in filtered if q_lower in m["title"].lower() or q_lower in (m.get("description") or "").lower()]
 
     total = len(filtered)
     total_pages = math.ceil(total / limit) if total > 0 else 1

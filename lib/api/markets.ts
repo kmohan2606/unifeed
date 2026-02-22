@@ -9,15 +9,26 @@ export interface MarketsPage {
   totalPages: number
 }
 
+// In-memory cache — survives client-side navigation (module is a singleton in the browser bundle)
+const _cache = new Map<string, { data: MarketsPage; ts: number }>()
+const CACHE_TTL_MS = 60_000 // 1 minute
+
 export async function getMarkets(
   category?: string,
   page = 1,
-  limit = 25
+  limit = 25,
+  q?: string
 ): Promise<MarketsPage> {
   if (useMockData) {
     let filtered = mockMarkets
     if (category && category !== "All") {
       filtered = filtered.filter((m) => m.category === category)
+    }
+    if (q) {
+      const ql = q.toLowerCase()
+      filtered = filtered.filter(
+        (m) => m.title.toLowerCase().includes(ql) || (m.description ?? "").toLowerCase().includes(ql)
+      )
     }
     const total = filtered.length
     const start = (page - 1) * limit
@@ -28,13 +39,20 @@ export async function getMarkets(
       totalPages: Math.ceil(total / limit),
     }
   }
+  const cacheKey = `${category ?? "All"}|${page}|${limit}|${q ?? ""}`
+  const hit = _cache.get(cacheKey)
+  if (hit && Date.now() - hit.ts < CACHE_TTL_MS) return hit.data
+
   const params = new URLSearchParams()
   if (category && category !== "All") params.set("category", category)
+  if (q) params.set("q", q)
   params.set("page", String(page))
   params.set("limit", String(limit))
   const res = await fetch(apiUrl(`/api/markets?${params}`))
   if (!res.ok) throw new Error("Failed to fetch markets")
-  return res.json()
+  const data: MarketsPage = await res.json()
+  _cache.set(cacheKey, { data, ts: Date.now() })
+  return data
 }
 
 export async function getMarketById(id: string): Promise<Market | null> {

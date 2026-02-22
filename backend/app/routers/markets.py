@@ -6,9 +6,9 @@ router = APIRouter(prefix="/api/markets", tags=["markets"])
 
 
 @router.get("")
-def list_markets(category=None, page=1, limit=25):
-    """List markets with pagination and optional category filter."""
-    return get_markets_page(category=category, page=int(page), limit=int(limit))
+def list_markets(category=None, q=None, page=1, limit=25):
+    """List markets with pagination and optional category/search filter."""
+    return get_markets_page(category=category, q=q, page=int(page), limit=int(limit))
 
 
 @router.get("/categories")

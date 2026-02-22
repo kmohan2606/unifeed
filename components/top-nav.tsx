@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { DepositModal } from "@/components/deposit-modal";
 import { useAuth } from "@/lib/auth-context";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SiteLogo } from "@/components/site-logo";
 import { useAccount, useBalance } from "wagmi";
 import { getToken } from "@/lib/api/auth";
@@ -48,6 +48,23 @@ export function TopNav() {
   const [paymentToken, setPaymentToken] = useState<string>(DEFAULT_POLYGON_USDC);
   const [paymentChainId, setPaymentChainId] = useState<number>(137);
   const [tokenPriceUsd, setTokenPriceUsd] = useState<number | null>(null);
+  const [searchValue, setSearchValue] = useState("");
+  const isMounted = useRef(false);
+
+  // Debounce search — dispatch event 300ms after the user stops typing.
+  // Skip on initial mount so the empty value doesn't wipe the market list.
+  useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true;
+      return;
+    }
+    const timer = setTimeout(() => {
+      window.dispatchEvent(
+        new CustomEvent("marketSearch", { detail: searchValue.trim() })
+      );
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchValue]);
 
   useEffect(() => {
     const fetchSettings = () => {
@@ -155,6 +172,8 @@ export function TopNav() {
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             placeholder="Search markets..."
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
             className="h-8 border-border bg-secondary pl-9 text-sm placeholder:text-muted-foreground"
           />
         </div>
