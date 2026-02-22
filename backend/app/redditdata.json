@@ -1,11 +1,9 @@
 {
     "type": "search",
     "query": {
-        "original": "Seattle weather",
+        "original": "Alex DeBrincat",
         "show_strict_warning": false,
         "is_navigational": false,
-        "is_geolocal": true,
-        "local_decision": "mix",
         "is_news_breaking": false,
         "spellcheck_off": true,
         "country": "us",
@@ -18,7 +16,132 @@
         "state": ""
     },
     "discussions": {
-        "results": []
+        "type": "search",
+        "results": [
+            {
+                "title": "The puck takes a crazy bounce and in, and Debrincat has a second consecutive 6 on 5 goal",
+                "url": "https://www.reddit.com/r/DetroitRedWings/comments/1qquh8g/the_puck_takes_a_crazy_bounce_and_in_and/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "Hockey gods paying us back for Wes being bad at his job.",
+                "fetched_content_timestamp": 1769772770,
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a DetroitRedWings  \u203a comments  \u203a 1qquh8g  \u203a the_puck_takes_a_crazy_bounce_and_in_and"
+                },
+                "age": "3 weeks ago",
+                "data": {
+                    "forum_name": "r/DetroitRedWings",
+                    "num_answers": 27,
+                    "score": "276",
+                    "title": "The puck takes a crazy bounce and in, and Debrincat has a second consecutive 6 on 5 goal",
+                    "top_comment": "Hockey gods paying us back for Wes being bad at his job."
+                }
+            },
+            {
+                "title": "Some love for a certain Alex DeBrincat : r/hawks",
+                "url": "https://www.reddit.com/r/hawks/comments/a5rptw/some_love_for_a_certain_alex_debrincat/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "",
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a hawks  \u203a comments  \u203a a5rptw  \u203a some_love_for_a_certain_alex_debrincat"
+                },
+                "data": {
+                    "forum_name": "r/hawks"
+                }
+            },
+            {
+                "title": "FS: Alex DeBrincat Chicago Blackhawks 2019 Winter ...",
+                "url": "https://www.reddit.com/r/hockeyjerseys/comments/1n1k21c/fs_alex_debrincat_chicago_blackhawks_2019_winter/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "",
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a hockeyjerseys  \u203a comments  \u203a 1n1k21c  \u203a fs_alex_debrincat_chicago_blackhawks_2019_winter"
+                },
+                "data": {
+                    "forum_name": "r/hockeyjerseys"
+                }
+            },
+            {
+                "title": "Alex Debrincat ends it in overtime. The Senators lose in OT in back to back nights.",
+                "url": "https://www.reddit.com/r/hockey/comments/1qgpqet/alex_debrincat_ends_it_in_overtime_the_senators/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "First of all, of course it went to OT. Fuck this division. I didn\u2019t think Reimer was bad but god Ottawa has got to do something. This can\u2019t be your tandem going forward even when Ullmark returns. Back to back OTLs gotta hurt :/",
+                "fetched_content_timestamp": 1768946802,
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a hockey  \u203a comments  \u203a 1qgpqet  \u203a alex_debrincat_ends_it_in_overtime_the_senators"
+                },
+                "age": "December 17, 2025",
+                "data": {
+                    "forum_name": "r/hockey",
+                    "num_answers": 302,
+                    "score": "1233",
+                    "title": "Alex Debrincat ends it in overtime. The Senators lose in OT in back to back nights.",
+                    "top_comment": "First of all, of course it went to OT. Fuck this division. I didn\u2019t think Reimer was bad but god Ottawa has got to do something. This can\u2019t be your tandem going forward even when Ullmark returns. Back to back OTLs gotta hurt :/"
+                }
+            },
+            {
+                "title": "Erie Otters and Blackhawks Prospect Alex DeBrincat ...",
+                "url": "https://www.reddit.com/r/hockey/comments/5bwzor/erie_otters_and_blackhawks_prospect_alex/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "",
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a hockey  \u203a comments  \u203a 5bwzor  \u203a erie_otters_and_blackhawks_prospect_alex"
+                },
+                "data": {
+                    "forum_name": "r/hockey"
+                }
+            }
+        ],
+        "mutated_by_goggles": false
     },
-    "topic": "Will the highest temperature in Seattle be 45\u00b0F or below on February 22?"
+    "topic": "Will Alex DeBrincat win the 2025\u20132026 NHL Art Ross Trophy?"
 }

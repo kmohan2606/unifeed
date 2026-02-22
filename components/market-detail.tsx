@@ -263,6 +263,8 @@ export function MarketDetail({ market, news }: MarketDetailProps) {
           <AnalysisNewsPanel
             news={analysisNews}
             discussions={analysisDiscussions}
+            newsReady={newsReady}
+            discussionsReady={discussionsReady}
           />
           {analysisError && (
             <p className="text-xs text-destructive">{analysisError}</p>

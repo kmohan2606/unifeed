@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Newspaper, MessageSquare } from "lucide-react"
+import { ExternalLink, Newspaper, MessageSquare, Loader2 } from "lucide-react"
 import type { AnalysisNewsItem, AnalysisDiscussion } from "@/lib/api"
 
 // ── Date filter helpers ──────────────────────────────────────────
@@ -64,11 +64,23 @@ function parseAgeToDate(age: string | undefined): Date | null {
 interface AnalysisNewsPanelProps {
   news: AnalysisNewsItem[]
   discussions: AnalysisDiscussion[]
+  newsReady?: boolean
+  discussionsReady?: boolean
 }
 
-export function AnalysisNewsPanel({ news, discussions }: AnalysisNewsPanelProps) {
+export function AnalysisNewsPanel({ news, discussions, newsReady = true, discussionsReady = true }: AnalysisNewsPanelProps) {
   const [tab, setTab] = useState<"news" | "discussions">("news")
   const [recency, setRecency] = useState<RecencyOption>("all")
+  const [minTimeElapsed, setMinTimeElapsed] = useState(false)
+
+  // Show spinner until both sources are ready
+  const isLoading = !newsReady || !discussionsReady
+
+  // Ensure spinner shows for at least 1.5s so it's visible even on instant responses
+  useEffect(() => {
+    const timer = setTimeout(() => setMinTimeElapsed(true), 1000)
+    return () => clearTimeout(timer)
+  }, [])
 
   // Filter news by pubDate
   const filteredNews = useMemo(() => {
@@ -93,14 +105,17 @@ export function AnalysisNewsPanel({ news, discussions }: AnalysisNewsPanelProps)
   const hasNews = news.length > 0
   const hasDiscussions = discussions.length > 0
 
-  if (!hasNews && !hasDiscussions) {
+  if (isLoading) {
     return (
       <Card className="border-border bg-card">
         <CardHeader className="pb-3">
           <h3 className="text-sm font-medium text-foreground">Research</h3>
         </CardHeader>
         <CardContent>
-          <p className="text-xs text-muted-foreground">No research data available yet.</p>
+          <div className="flex items-center gap-2 py-4 justify-center">
+            <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+            <p className="text-xs text-muted-foreground">Fetching research data...</p>
+          </div>
         </CardContent>
       </Card>
     )

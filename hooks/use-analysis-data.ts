@@ -66,39 +66,38 @@ export function useAnalysisData(topic: string | null, enabled = true): AnalysisD
         let nextState: Partial<AnalysisDataState> = {}
 
         // ── News ──────────────────────────────────────────────────
-        // FastAPI wraps the newsdata.io response verbatim under `newsdata`.
-        // Shape: { status, totalResults, results: [...], nextPage, topic }
-        if (newsRes && newsRes.status === "ready" && Array.isArray(newsRes.newsdata?.results)) {
+        // status "ready" means the backend has finished — results may be empty
+        if (newsRes && newsRes.status === "ready") {
           newsReady = true
-          const articles: AnalysisNewsItem[] = newsRes.newsdata.results.map((a: any) => ({
-            title: a.title ?? "",
-            description: a.description ?? "",
-            link: a.link ?? "#",
-            source_name: a.source_name ?? a.source_id ?? "",
-            pubDate: a.pubDate ?? new Date().toISOString(),
-          }))
+          const rawResults = newsRes.newsdata?.results
+          const articles: AnalysisNewsItem[] = Array.isArray(rawResults)
+            ? rawResults.map((a: any) => ({
+              title: a.title ?? "",
+              description: a.description ?? "",
+              link: a.link ?? "#",
+              source_name: a.source_name ?? a.source_id ?? "",
+              pubDate: a.pubDate ?? new Date().toISOString(),
+            }))
+            : []
           nextState = { ...nextState, news: articles, newsReady: true }
         }
 
         // ── Discussions ───────────────────────────────────────────
-        // FastAPI wraps the Brave Search response verbatim under `redditdata`.
-        // Shape: { type, query, discussions: { results: [...] }, topic }
-        // Each result has: title, description, url, forum_name, age, score, num_answers
-        if (
-          redditRes &&
-          redditRes.status === "ready" &&
-          Array.isArray(redditRes.redditdata?.discussions?.results)
-        ) {
+        // status "ready" means the backend has finished — results may be empty
+        if (redditRes && redditRes.status === "ready") {
           discussionsReady = true
-          const posts: AnalysisDiscussion[] = redditRes.redditdata.discussions.results.map((p: any) => ({
-            title: p.title ?? "",
-            description: p.description ?? "",
-            url: p.url ?? "#",
-            forum_name: p.forum_name ?? "reddit",
-            age: p.age ?? "",
-            score: p.score ?? 0,
-            num_answers: p.num_answers ?? 0,
-          }))
+          const rawResults = redditRes.redditdata?.discussions?.results
+          const posts: AnalysisDiscussion[] = Array.isArray(rawResults)
+            ? rawResults.map((p: any) => ({
+              title: p.title ?? "",
+              description: p.description ?? "",
+              url: p.url ?? "#",
+              forum_name: p.forum_name ?? "reddit",
+              age: p.age ?? "",
+              score: p.score ?? 0,
+              num_answers: p.num_answers ?? 0,
+            }))
+            : []
           nextState = { ...nextState, discussions: posts, discussionsReady: true }
         }
 
