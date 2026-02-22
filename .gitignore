@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Next.js build
+.next/
+out/
+
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+
+# SQLite databases
+*.db
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
