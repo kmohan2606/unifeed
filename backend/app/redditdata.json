@@ -1,0 +1,24 @@
+{
+    "type": "search",
+    "query": {
+        "original": "Moscow Derby",
+        "show_strict_warning": false,
+        "is_navigational": false,
+        "is_geolocal": true,
+        "local_decision": "mix",
+        "is_news_breaking": false,
+        "spellcheck_off": true,
+        "country": "us",
+        "bad_results": false,
+        "should_fallback": false,
+        "postal_code": "",
+        "city": "",
+        "header_country": "",
+        "more_results_available": true,
+        "state": ""
+    },
+    "discussions": {
+        "results": []
+    },
+    "topic": "Will PFK CSKA Moskva vs. FK Dinamo Moskva end in a draw?"
+}

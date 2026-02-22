@@ -12,7 +12,12 @@ import { NewsPanel } from "@/components/news-panel";
 import { MarketAnalytics } from "@/components/market-analytics";
 import { Orderbook } from "@/components/orderbook";
 import { MarketDescription } from "@/components/market-description";
+import { MarketSentiment } from "@/components/market_analysis"
+import { AnalysisNewsPanel } from "@/components/analysis-news-panel"
+import { useAnalysisData } from "@/hooks/use-analysis-data"
 import type { Market, NewsItem } from "@/lib/types";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000"
 
 function formatVolume(val: number) {
   if (val >= 1_000_000) return `$${(val / 1_000_000).toFixed(1)}M`;
@@ -34,6 +39,38 @@ function useDaysUntil(date: string) {
   return label;
 }
 
+// ── Kick off analysis and return sentiment ────────────────────────
+
+function useMarketAnalysis(market: Market) {
+  const [sentiment, setSentiment] = useState<string>("")
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function run() {
+      try {
+        const res = await fetch(
+          `${API_URL}/analyze/?topic=${encodeURIComponent(market.title)}`,
+          { method: "POST" }
+        )
+        if (cancelled) return
+        const data = await res.json()
+        // The /analyze/ endpoint returns { result: "<sentiment string>" }
+        setSentiment(data.result ?? "")
+      } catch (err) {
+        console.error("[useMarketAnalysis] failed to start analysis:", err)
+      }
+    }
+
+    run()
+    return () => { cancelled = true }
+  }, [market.title])
+
+  return { sentiment }
+}
+
+// ─────────────────────────────────────────────────────────────────
+
 interface MarketDetailProps {
   market: Market;
   news: NewsItem[];
@@ -42,6 +79,18 @@ interface MarketDetailProps {
 export function MarketDetail({ market, news }: MarketDetailProps) {
   const isPositive = market.change24h >= 0;
   const daysLabel = useDaysUntil(market.endDate);
+
+  // 1. Trigger analysis + get sentiment (runs independently of news polling)
+  const { sentiment } = useMarketAnalysis(market)
+
+  // 2. Poll for news / discussion data immediately — don't wait for sentiment
+  const {
+    news: analysisNews,
+    discussions: analysisDiscussions,
+    newsReady,
+    discussionsReady,
+    error: analysisError,
+  } = useAnalysisData(market.title)
 
   return (
     <div className="flex flex-col gap-6">
@@ -182,6 +231,9 @@ export function MarketDetail({ market, news }: MarketDetailProps) {
             </CardContent>
           </Card>
 
+          {/* Market Sentiment - below chart */}
+          <MarketSentiment text={sentiment} />
+
           {/* Analytics */}
           <MarketAnalytics market={market} />
 
@@ -208,7 +260,13 @@ export function MarketDetail({ market, news }: MarketDetailProps) {
         {/* Sidebar */}
         <div className="flex flex-col gap-6">
           <OrderForm market={market} />
-          <NewsPanel news={news} />
+          <AnalysisNewsPanel
+            news={analysisNews}
+            discussions={analysisDiscussions}
+          />
+          {analysisError && (
+            <p className="text-xs text-destructive">{analysisError}</p>
+          )}
         </div>
       </div>
     </div>
