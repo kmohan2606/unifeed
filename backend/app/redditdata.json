@@ -1,9 +1,9 @@
 {
     "type": "search",
     "query": {
-        "original": "NHL",
+        "original": "Hurricanes vs. Lightning",
         "show_strict_warning": false,
-        "is_navigational": true,
+        "is_navigational": false,
         "is_news_breaking": false,
         "spellcheck_off": true,
         "country": "us",
@@ -19,36 +19,12 @@
         "type": "search",
         "results": [
             {
-                "title": "FIX NHL (CHEL) | EA Forums - 13205976",
-                "url": "https://forums.ea.com/discussions/ea-connect-mobile-feedback-en/fix-nhl-chel/13205976",
+                "title": "GDT: Tampa Bay Lightning vs Carolina Hurricanes 9/26/25",
+                "url": "https://www.reddit.com/r/TampaBayLightning/comments/1nrfpjw/gdt_tampa_bay_lightning_vs_carolina_hurricanes/",
                 "is_source_local": false,
                 "is_source_both": false,
-                "description": "This game is broken. CHEL is terrible. Put too much effort into making sure a fan ca enjoy a pretzel in the stands but can't make the game play realistic. if... - 13205976",
-                "fetched_content_timestamp": 1771680648,
-                "language": "en",
-                "family_friendly": true,
-                "type": "discussion",
-                "subtype": "generic",
-                "is_live": false,
-                "meta_url": {
-                    "scheme": "https",
-                    "netloc": "forums.ea.com",
-                    "hostname": "forums.ea.com",
-                    "favicon": "https://imgs.search.brave.com/sEOItPaPVNxlFNs-RiZNqwvDg5jB5iYFBBvq50uzM1c/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGQzZjU1NjA2/MTczYjE2NWE0Y2Ux/MGFkYTVmMmY2ODZm/NWQ4Y2I1NmQ1Mjdj/ZDg5YjZjZGIxMzg3/ZDM0YWUyNy9mb3J1/bXMuZWEuY29tLw",
-                    "path": "\u203a discussions  \u203a ea-connect-mobile-feedback-en  \u203a fix-nhl-chel  \u203a 13205976"
-                },
-                "age": "1 day ago",
-                "data": {
-                    "forum_name": "forums.ea.com"
-                }
-            },
-            {
-                "title": "Did Czech not have too many men on the goal?",
-                "url": "https://www.reddit.com/r/nhl/comments/1r8dcff/did_czech_not_have_too_many_men_on_the_goal/",
-                "is_source_local": false,
-                "is_source_both": false,
-                "description": "Yes. Yes they did",
-                "fetched_content_timestamp": 1771525439,
+                "description": "That\u2019s Zemgus \u201cNikita Kucherov\u201d Girgensons to you peasants!",
+                "fetched_content_timestamp": 1764058941,
                 "language": "en",
                 "family_friendly": true,
                 "type": "discussion",
@@ -59,24 +35,53 @@
                     "netloc": "reddit.com",
                     "hostname": "www.reddit.com",
                     "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
-                    "path": "\u203a r  \u203a nhl  \u203a comments  \u203a 1r8dcff  \u203a did_czech_not_have_too_many_men_on_the_goal"
+                    "path": "\u203a r  \u203a TampaBayLightning  \u203a comments  \u203a 1nrfpjw  \u203a gdt_tampa_bay_lightning_vs_carolina_hurricanes"
                 },
-                "age": "4 days ago",
+                "age": "September 26, 2025",
+                "data": {
+                    "forum_name": "r/TampaBayLightning",
+                    "num_answers": 143,
+                    "score": "39",
+                    "title": "GDT: Tampa Bay Lightning vs Carolina Hurricanes 9/26/25",
+                    "question": "<p>Hockey is finally back at <s>Amalie</s> Benchmark International Arena! (We really need to think of a nickname for this monstrosity)</p><h1 class=\"text-24-scalable xs:text-20-scalable\"></h1><p>Go Bolts, read the rules, don\u2019t be a jerk, and let\u2019s bring Stanley home this year</p>",
+                    "top_comment": "That\u2019s Zemgus \u201cNikita Kucherov\u201d Girgensons to you peasants!"
+                }
+            },
+            {
+                "title": "Hurricane vs Lightning. Who do you think wins?",
+                "url": "https://www.reddit.com/r/nhl/comments/nmxeqx/hurricane_vs_lightning_who_do_you_think_wins/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "<p>\n    I have high hopes for this series. I think it\u2019s going to 7. And it\u2019s going to be awesome.\n  </p>",
+                "fetched_content_timestamp": 1734111119,
+                "language": "en",
+                "family_friendly": true,
+                "type": "discussion",
+                "subtype": "generic",
+                "is_live": false,
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "reddit.com",
+                    "hostname": "www.reddit.com",
+                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
+                    "path": "\u203a r  \u203a nhl  \u203a comments  \u203a nmxeqx  \u203a hurricane_vs_lightning_who_do_you_think_wins"
+                },
+                "age": "May 28, 2021",
                 "data": {
                     "forum_name": "r/nhl",
-                    "num_answers": 86,
-                    "score": "362",
-                    "title": "Did Czech not have too many men on the goal?",
-                    "top_comment": "Yes. Yes they did"
+                    "num_answers": 149,
+                    "score": "833",
+                    "title": "Hurricane vs Lightning. Who do you think wins?",
+                    "top_comment": "<p>\n    I have high hopes for this series. I think it\u2019s going to 7. And it\u2019s going to be awesome.\n  </p>"
                 }
             },
             {
-                "title": "Connor McDavid now has the most points ever by an NHL player in a single Olympic Games",
-                "url": "https://www.reddit.com/r/hockey/comments/1ra0xx7/connor_mcdavid_now_has_the_most_points_ever_by_an/",
+                "title": "Post Game Thread: Carolina Hurricanes at Tampa Bay Lightning - 20 Dec 2025",
+                "url": "https://www.reddit.com/r/hockey/comments/1prvqzr/post_game_thread_carolina_hurricanes_at_tampa_bay/",
                 "is_source_local": false,
                 "is_source_both": false,
-                "description": "He\u2019s so much better than everyone else on this team of \u201csuper stars\u201d The contrast in talent is just insane Macklin good too",
-                "fetched_content_timestamp": 1771609944,
+                "description": "Well at least we didn't leave Tampa with any more players on IR",
+                "fetched_content_timestamp": 1766334527,
                 "language": "en",
                 "family_friendly": true,
                 "type": "discussion",
@@ -87,76 +92,20 @@
                     "netloc": "reddit.com",
                     "hostname": "www.reddit.com",
                     "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
-                    "path": "\u203a r  \u203a hockey  \u203a comments  \u203a 1ra0xx7  \u203a connor_mcdavid_now_has_the_most_points_ever_by_an"
+                    "path": "\u203a r  \u203a hockey  \u203a comments  \u203a 1prvqzr  \u203a post_game_thread_carolina_hurricanes_at_tampa_bay"
                 },
-                "age": "2 days ago",
+                "age": "December 21, 2025",
                 "data": {
                     "forum_name": "r/hockey",
-                    "num_answers": 70,
-                    "score": "379",
-                    "title": "Connor McDavid now has the most points ever by an NHL player in a single Olympic Games",
-                    "top_comment": "He\u2019s so much better than everyone else on this team of \u201csuper stars\u201d The contrast in talent is just insane Macklin good too"
-                }
-            },
-            {
-                "title": "USA ready for 'tough test' against Sweden in quarterfinals | NHL.com",
-                "url": "https://www.reddit.com/r/hockey/comments/1r82n3b/usa_ready_for_tough_test_against_sweden_in/",
-                "is_source_local": false,
-                "is_source_both": false,
-                "description": "Matthews vs Nylander and OEL. I'm excited for this matchup. Great day of hockey today!",
-                "fetched_content_timestamp": 1771444391,
-                "language": "en",
-                "family_friendly": true,
-                "type": "discussion",
-                "subtype": "generic",
-                "is_live": false,
-                "meta_url": {
-                    "scheme": "https",
-                    "netloc": "reddit.com",
-                    "hostname": "www.reddit.com",
-                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
-                    "path": "\u203a r  \u203a hockey  \u203a comments  \u203a 1r82n3b  \u203a usa_ready_for_tough_test_against_sweden_in"
-                },
-                "age": "4 days ago",
-                "data": {
-                    "forum_name": "r/hockey",
-                    "num_answers": 14,
-                    "score": "49",
-                    "title": "USA ready for 'tough test' against Sweden in quarterfinals | NHL.com",
-                    "top_comment": "Matthews vs Nylander and OEL. I'm excited for this matchup. Great day of hockey today!"
-                }
-            },
-            {
-                "title": "Which Olympic Teams would you consider, we're it in the NHL, to be the best team in the NHL?",
-                "url": "https://www.reddit.com/r/hockey/comments/1r9nsuc/which_olympic_teams_would_you_consider_were_it_in/",
-                "is_source_local": false,
-                "is_source_both": false,
-                "description": "Finland is probably the most realistic NHL team out of them. Top 6 has some star power and bottom 6 are grinders that also have the skill to produce (especially Luostarinen-Lundell) Defense isn't probably on a Cup contender level, but still has a very good top pairing. Mikkola-Ristolainen is a pain in the ass to play against. M\u00e4\u00e4tt\u00e4-Jokiharju-Matinpalo aren't anything special but atleast M\u00e4\u00e4tt\u00e4 is a serviceable 3rd pair guy.",
-                "fetched_content_timestamp": 1771611492,
-                "language": "en",
-                "family_friendly": true,
-                "type": "discussion",
-                "subtype": "generic",
-                "is_live": false,
-                "meta_url": {
-                    "scheme": "https",
-                    "netloc": "reddit.com",
-                    "hostname": "www.reddit.com",
-                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
-                    "path": "\u203a r  \u203a hockey  \u203a comments  \u203a 1r9nsuc  \u203a which_olympic_teams_would_you_consider_were_it_in"
-                },
-                "age": "2 days ago",
-                "data": {
-                    "forum_name": "r/hockey",
-                    "num_answers": 33,
-                    "score": "0",
-                    "title": "Which Olympic Teams would you consider, we're it in the NHL, to be the best team in the NHL?",
-                    "question": "<p>I think everyone would say both Canada and the US are better than every NHL team, but what about the other nations?</p><p>Also how much does calculation change if you take Olympic players away from their NHL team? (i.e. McDavid plays for Canada and not for the Oilers)</p>",
-                    "top_comment": "Finland is probably the most realistic NHL team out of them. Top 6 has some star power and bottom 6 are grinders that also have the skill to produce (especially Luostarinen-Lundell) Defense isn't probably on a Cup contender level, but still has a very good top pairing. Mikkola-Ristolainen is a pain in the ass to play against. M\u00e4\u00e4tt\u00e4-Jokiharju-Matinpalo aren't anything special but atleast M\u00e4\u00e4tt\u00e4 is a serviceable 3rd pair guy."
+                    "num_answers": 50,
+                    "score": "16",
+                    "title": "Post Game Thread: Carolina Hurricanes at Tampa Bay Lightning - 20 Dec 2025",
+                    "question": "<p><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://www.nhl.com/gamecenter/2025020557\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Recap/Boxscore</a></p><table class=\"overflow-x-auto\"><thead><tr><th class=\"align-center\">Teams</th><th class=\"align-center\">1st</th><th class=\"align-center\">2nd</th><th class=\"align-center\">3rd</th><th class=\"align-center\">Total</th></tr> <tr></tr></thead> <tbody><tr><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">3</td><td class=\"align-center\">0</td><td class=\"align-center\">1</td><td class=\"align-center\">4</td></tr><tr><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">0</td><td class=\"align-center\">3</td><td class=\"align-center\">3</td><td class=\"align-center\">6</td></tr></tbody></table><table class=\"overflow-x-auto\"><thead><tr><th class=\"align-center\">Team</th><th class=\"align-center\">Shots</th><th class=\"align-center\">Hits</th><th class=\"align-center\">Blocked</th><th class=\"align-center\">FO%</th><th class=\"align-center\">Giveaways</th><th class=\"align-center\">Takeaways</th><th class=\"align-center\">Power Plays</th></tr> <tr></tr></thead> <tbody><tr><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">22</td><td class=\"align-center\">23</td><td class=\"align-center\">15</td><td class=\"align-center\">44.23%</td><td class=\"align-center\">13</td><td class=\"align-center\">6</td><td class=\"align-center\">2/5</td></tr><tr><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">29</td><td class=\"align-center\">19</td><td class=\"align-center\">14</td><td class=\"align-center\">55.77%</td><td class=\"align-center\">14</td><td class=\"align-center\">1</td><td class=\"align-center\">0/3</td></tr></tbody></table><table class=\"overflow-x-auto\"><thead><tr><th class=\"align-center\">Period</th><th class=\"align-center\">Time</th><th class=\"align-center\">Team</th><th class=\"align-center\">Strength</th><th class=\"align-center\">Description</th></tr> <tr></tr></thead> <tbody><tr><td class=\"align-center\">1st</td><td class=\"align-center\">02:42</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">EV</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://players.brightcove.net/6415718365001/EXtG1xJ7H_default/index.html?videoId=6386770359112\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Eric Robinson (7) slap shot, assist(s): Jordan Staal (5)</a></td></tr><tr><td class=\"align-center\">1st</td><td class=\"align-center\">04:00</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">PP</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://players.brightcove.net/6415718365001/EXtG1xJ7H_default/index.html?videoId=6386768219112\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Jackson Blake (10) tip-in shot, assist(s): Nikolaj Ehlers (16), Shayne Gostisbehere (23)</a></td></tr><tr><td class=\"align-center\">1st</td><td class=\"align-center\">12:27</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">PP</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://players.brightcove.net/6415718365001/EXtG1xJ7H_default/index.html?videoId=6386770483112\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Bradly Nadeau (2) wrist shot, assist(s): Logan Stankoven (10)</a></td></tr><tr><td class=\"align-center\">2nd</td><td class=\"align-center\">00:30</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">EV</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://players.brightcove.net/6415718365001/EXtG1xJ7H_default/index.html?videoId=6386771917112\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Gage Goncalves (3) snap shot, assist(s): Dominic James (4), Max Crozier (5)</a></td></tr><tr><td class=\"align-center\">2nd</td><td class=\"align-center\">01:20</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">EV</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://players.brightcove.net/6415718365001/EXtG1xJ7H_default/index.html?videoId=6386772685112\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Brayden Point (6) tip-in shot, assist(s): Charle-Edouard D&#39;Astous (7), Nikita Kucherov (30)</a></td></tr><tr><td class=\"align-center\">2nd</td><td class=\"align-center\">16:36</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">EV</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://players.brightcove.net/6415718365001/EXtG1xJ7H_default/index.html?videoId=6386773037112\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Jack Finley (2) wrist shot, assist(s): Dominic James (5), Yanni Gourde (7)</a></td></tr><tr><td class=\"align-center\">3rd</td><td class=\"align-center\">02:47</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">EV</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://players.brightcove.net/6415718365001/EXtG1xJ7H_default/index.html?videoId=6386774932112\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Andrei Svechnikov (8) backhand shot, assist(s): Mark Jankowski (4), Jesperi Kotkaniemi (4)</a></td></tr><tr><td class=\"align-center\">3rd</td><td class=\"align-center\">03:13</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">EV</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://players.brightcove.net/6415718365001/EXtG1xJ7H_default/index.html?videoId=6386775223112\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Ryan McDonagh (4) wrist shot, assist(s): Pontus Holmberg (6), Charle-Edouard D&#39;Astous (8)</a></td></tr><tr><td class=\"align-center\">3rd</td><td class=\"align-center\">06:38</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">EV</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"https://players.brightcove.net/6415718365001/EXtG1xJ7H_default/index.html?videoId=6386774939112\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">Jake Guentzel (16) backhand shot, assist(s): J.J. Moser (9), Nick Paul (5)</a></td></tr><tr><td class=\"align-center\">3rd</td><td class=\"align-center\">19:33</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">EV</td><td class=\"align-center\">Jake Guentzel (17) wrist shot, assist(s): Ryan McDonagh (4)</td></tr></tbody></table><table class=\"overflow-x-auto\"><thead><tr><th class=\"align-center\">Period</th><th class=\"align-center\">Time</th><th class=\"align-center\">Team</th><th class=\"align-center\">Type</th><th class=\"align-center\">Min</th><th class=\"align-center\">Description</th></tr> <tr></tr></thead> <tbody><tr><td class=\"align-center\">1st</td><td class=\"align-center\">03:27</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Declan Carlile holding against Eric Robinson</td></tr><tr><td class=\"align-center\">1st</td><td class=\"align-center\">06:00</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Andrei Svechnikov interference against Zemgus Girgensons</td></tr><tr><td class=\"align-center\">1st</td><td class=\"align-center\">10:35</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">4</td><td class=\"align-center\">Jack Finley high-sticking-double-minor against Mike Reilly</td></tr><tr><td class=\"align-center\">1st</td><td class=\"align-center\">14:36</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Zemgus Girgensons high-sticking against Bradly Nadeau</td></tr><tr><td class=\"align-center\">2nd</td><td class=\"align-center\">02:07</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Jesperi Kotkaniemi roughing against Declan Carlile</td></tr><tr><td class=\"align-center\">2nd</td><td class=\"align-center\">02:07</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Jesperi Kotkaniemi roughing against Declan Carlile</td></tr><tr><td class=\"align-center\">2nd</td><td class=\"align-center\">02:07</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Mark Jankowski roughing against Nick Paul</td></tr><tr><td class=\"align-center\">2nd</td><td class=\"align-center\">02:07</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Declan Carlile roughing against Jesperi Kotkaniemi</td></tr><tr><td class=\"align-center\">2nd</td><td class=\"align-center\">02:07</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Nick Paul roughing against Mark Jankowski</td></tr><tr><td class=\"align-center\">2nd</td><td class=\"align-center\">18:07</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/tampabaylightning\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">TBL</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Darren Raddysh roughing against Logan Stankoven</td></tr><tr><td class=\"align-center\">3rd</td><td class=\"align-center\">14:32</td><td class=\"align-center\"><a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \" href=\"/r/canes\" rel=\"noopener nofollow noreferrer ugc\" target=\"_blank\">CAR</a></td><td class=\"align-center\">MIN</td><td class=\"align-center\">2</td><td class=\"align-center\">Andrei Svechnikov tripping against Oliver Bjorkstrand</td></tr></tbody></table>",
+                    "top_comment": "Well at least we didn't leave Tampa with any more players on IR"
                 }
             }
         ],
         "mutated_by_goggles": false
     },
-    "topic": "Golden Knights vs. Sabres: O/U 5.5"
+    "topic": "Hurricanes vs. Lightning: O/U 7.5"
 }

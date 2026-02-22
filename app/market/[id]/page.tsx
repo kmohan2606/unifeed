@@ -6,15 +6,8 @@ import { TopNav } from "@/components/top-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { MarketDetail } from "@/components/market-detail"
 import { AuthGuard } from "@/components/auth-guard"
-import {
-  getMarketById,
-  getNewsForMarket,
-  getMarketSentiment,
-  getAnalysisNews,
-  getAnalysisDiscussions,
-} from "@/lib/api"
+import { getMarketById, getNewsForMarket } from "@/lib/api"
 import type { NewsItem } from "@/lib/types"
-import type { AnalysisNewsItem, AnalysisDiscussion } from "@/lib/api"
 
 // Simple spinner component
 function Spinner() {
@@ -33,9 +26,7 @@ export default function MarketPage({ params }: { params: Promise<{ id: string }>
 
   const [market, setMarket] = useState<any>(null)
   const [relatedNews, setRelatedNews] = useState<NewsItem[]>([])
-  const [sentiment, setSentiment] = useState("")
-  const [analysisNews, setAnalysisNews] = useState<AnalysisNewsItem[]>([])
-  const [analysisDiscussions, setAnalysisDiscussions] = useState<AnalysisDiscussion[]>([])
+
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -48,15 +39,11 @@ export default function MarketPage({ params }: { params: Promise<{ id: string }>
       setMarket(marketData)
       setRelatedNews(await getNewsForMarket(marketData.id))
       setLoading(false)
-      getMarketSentiment(marketData.title).then(setSentiment)
-      getAnalysisNews(marketData.title).then(setAnalysisNews)
-      getAnalysisDiscussions(marketData.title).then(setAnalysisDiscussions)
+
     }
     fetchMarket()
   }, [id])
 
-  console.log("analysisNews", analysisNews)
-  console.log("analysisDiscussions", analysisDiscussions)
 
   if (loading || !market) {
     return (
@@ -76,9 +63,6 @@ export default function MarketPage({ params }: { params: Promise<{ id: string }>
             <MarketDetail
               market={market}
               news={relatedNews}
-              sentiment={sentiment}
-              analysisNews={analysisNews}
-              analysisDiscussions={analysisDiscussions}
             />
           </div>
         </main>
