@@ -25,7 +25,7 @@ export function AnalysisNewsPanel({ news, discussions }: AnalysisNewsPanelProps)
           <h3 className="text-sm font-medium text-foreground">Research</h3>
         </CardHeader>
         <CardContent>
-          <p className="text-xs text-muted-foreground">No research data available yet. Analysis will appear after the first sentiment request.</p>
+          <p className="text-xs text-muted-foreground">No research data available yet.</p>
         </CardContent>
       </Card>
     )
