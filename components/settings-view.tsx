@@ -616,17 +616,7 @@ export function SettingsView() {
                   className="scale-90"
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs font-medium text-foreground">
-                    Live BTC/USD Rate
-                  </p>
-                  <p className="text-[10px] text-muted-foreground">
-                    Show real-time Bitcoin conversion rates
-                  </p>
-                </div>
-                <Switch defaultChecked className="scale-90" />
-              </div>
+
             </div>
           </CardContent>
         </Card>
@@ -641,13 +631,13 @@ export function SettingsView() {
               </h2>
             </div>
           </CardHeader>
-          <CardContent className="grid gap-3 sm:grid-cols-2">
-            <div className="flex items-center justify-between">
-              <div>
+          <CardContent className="flex flex-row flex-wrap items-center justify-center gap-8 pt-2">
+            <div className="flex items-center gap-3">
+              <div className="text-right">
                 <p className="text-xs font-medium text-foreground">
                   Order Confirmations
                 </p>
-                <p className="text-[10px] text-muted-foreground">
+                <p className="text-[10px] text-muted-foreground hidden sm:block">
                   Get notified when orders are filled
                 </p>
               </div>
@@ -657,23 +647,23 @@ export function SettingsView() {
                 className="scale-90"
               />
             </div>
-            <div className="flex items-center justify-between">
-              <div>
+            <div className="flex items-center gap-3">
+              <div className="text-right">
                 <p className="text-xs font-medium text-foreground">
                   Arbitrage Opportunities
                 </p>
-                <p className="text-[10px] text-muted-foreground">
+                <p className="text-[10px] text-muted-foreground hidden sm:block">
                   {"Notify when spread exceeds 5%"}
                 </p>
               </div>
               <Switch defaultChecked className="scale-90" />
             </div>
-            <div className="flex items-center justify-between">
-              <div>
+            <div className="flex items-center gap-3">
+              <div className="text-right">
                 <p className="text-xs font-medium text-foreground">
                   Market Resolution
                 </p>
-                <p className="text-[10px] text-muted-foreground">
+                <p className="text-[10px] text-muted-foreground hidden sm:block">
                   Get notified when your markets resolve
                 </p>
               </div>

@@ -44,6 +44,7 @@ export function Dashboard() {
   }, [activeCategory, fetchPage]);
 
   function handleCategoryChange(cat: string) {
+    if (cat === activeCategory) return;
     setActiveCategory(cat);
     setPage(1);
     setMarkets([]);

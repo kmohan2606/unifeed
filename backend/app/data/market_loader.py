@@ -44,7 +44,7 @@ def _slugify(text):
     return slug[:80]
 
 
-def _build_market(raw_id, title, description, category, source):
+def _build_market(raw_id, title, description, category, source, end_date="2027-12-31"):
     k_yes = round(random.uniform(0.10, 0.90), 2)
     p_yes = round(k_yes + random.uniform(-0.05, 0.05), 2)
     p_yes = max(0.05, min(0.95, p_yes))
@@ -66,7 +66,7 @@ def _build_market(raw_id, title, description, category, source):
         "title": title,
         "category": category,
         "description": description,
-        "endDate": "2027-12-31",
+        "endDate": end_date,
         "status": "open",
         "platforms": [
             {
@@ -125,12 +125,14 @@ def _load_all():
                     ticker = entry.get("ticker", "")
                     title = entry.get("title", "")
                     desc = entry.get("description", "")
+                    end_date = entry.get("end_date", "2027-12-31")
                 else:
                     ticker, title, desc = entry[0], entry[1], entry[2]
+                    end_date = "2027-12-31"
                 if ticker in seen_ids:
                     continue
                 seen_ids.add(ticker)
-                all_markets.append(_build_market(ticker, title, desc, cat, "kalshi"))
+                all_markets.append(_build_market(ticker, title, desc, cat, "kalshi", end_date))
 
     if poly_path.exists():
         with open(poly_path) as f:
@@ -141,13 +143,15 @@ def _load_all():
                     title = entry.get("title", "")
                     desc = entry.get("description", "")
                     mid = entry.get("id") or entry.get("slug") or _slugify(title)
+                    end_date = entry.get("end_date", "2027-12-31")
                 else:
                     title, desc = entry[0], entry[1]
                     mid = _slugify(title)
+                    end_date = "2027-12-31"
                 if mid in seen_ids:
                     mid = mid + "-" + str(random.randint(1000, 9999))
                 seen_ids.add(mid)
-                all_markets.append(_build_market(mid, title, desc, cat, "polymarket"))
+                all_markets.append(_build_market(mid, title, desc, cat, "polymarket", end_date))
 
     all_markets.sort(key=lambda m: m["totalVolume"], reverse=True)
     return all_markets

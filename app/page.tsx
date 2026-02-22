@@ -73,32 +73,34 @@ export default function LandingPage() {
     <div className="flex min-h-screen flex-col bg-background">
       {/* Navigation */}
       <header className="sticky top-0 z-50 flex h-14 items-center justify-between border-b border-border bg-card/80 px-4 backdrop-blur-sm lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
-          <SiteLogo className="h-8 w-8 rounded-lg" />
-          <span className="text-lg font-semibold tracking-tight text-foreground">
-            UniFeed
-          </span>
-        </Link>
-        <nav className="hidden items-center gap-6 md:flex">
-          <a
-            href="#features"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Features
-          </a>
-          <a
-            href="#markets"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Markets
-          </a>
-          <a
-            href="#how-it-works"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            How It Works
-          </a>
-        </nav>
+        <div className="flex items-center gap-6 md:gap-10">
+          <Link href="/" className="flex items-center gap-2">
+            <SiteLogo className="h-8 w-8 rounded-lg" />
+            <span className="text-lg font-semibold tracking-tight text-foreground">
+              UniFeed
+            </span>
+          </Link>
+          <nav className="hidden items-center gap-6 md:flex">
+            <a
+              href="#features"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Features
+            </a>
+            <a
+              href="#markets"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Markets
+            </a>
+            <a
+              href="#how-it-works"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              How It Works
+            </a>
+          </nav>
+        </div>
         <LandingNavActions />
       </header>
 
@@ -113,7 +115,7 @@ export default function LandingPage() {
             </span>
           </div>
           <h1 className="max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            One Platform Every Prediction Market
+            One Platform.<br></br> Every Prediction Market.
           </h1>
           <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
             Compare prices across exchanges, route orders for the best deal, and
@@ -163,11 +165,10 @@ export default function LandingPage() {
                     {m.volume}
                   </span>
                   <span
-                    className={`text-right font-mono text-sm ${
-                      m.change.startsWith("+")
-                        ? "text-primary"
-                        : "text-destructive"
-                    }`}
+                    className={`text-right font-mono text-sm ${m.change.startsWith("+")
+                      ? "text-primary"
+                      : "text-destructive"
+                      }`}
                   >
                     {m.change}
                   </span>

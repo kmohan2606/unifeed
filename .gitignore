@@ -27,3 +27,11 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+*.cursor
+
+# Data
+*.json
+*.pkl
+
+
+

@@ -46,10 +46,10 @@ export function MarketCard({ market }: { market: Market }) {
   const daysLabel = useDaysUntil(market.endDate);
 
   return (
-    <Link href={`/market/${market.id}`}>
-      <Card className="group cursor-pointer border-border bg-card transition-all hover:border-primary/30 hover:bg-accent/30">
-        <CardContent className="flex flex-col gap-3 p-4">
-          <div className="flex items-start justify-between gap-2">
+    <Link href={`/market/${market.id}`} className="block h-full">
+      <Card className="group flex h-full flex-col cursor-pointer border-border bg-card transition-all hover:border-primary/30 hover:bg-accent/30">
+        <CardContent className="flex flex-1 flex-col gap-3 p-4">
+          <div className="flex flex-1 items-start justify-between gap-2">
             <div className="flex-1">
               <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
                 <Badge variant="secondary" className="text-[10px] font-medium">
