@@ -1,7 +1,7 @@
 {
     "type": "search",
     "query": {
-        "original": "Al Shabab vs Al Hilal",
+        "original": "Seattle weather",
         "show_strict_warning": false,
         "is_navigational": false,
         "is_geolocal": true,
@@ -20,5 +20,5 @@
     "discussions": {
         "results": []
     },
-    "topic": "Al Shabab Saudi Club vs. Al Hilal Saudi Club: O/U 2.5"
+    "topic": "Will the highest temperature in Seattle be 45\u00b0F or below on February 22?"
 }

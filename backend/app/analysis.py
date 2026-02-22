@@ -33,7 +33,7 @@ def extract_search_query(topic: str) -> str:
             model=model,
             contents=prompt,
         )
-        keyword = response.text.strip()
+        keyword = response.text.strip().strip('.,;:!?"\'-()[]{}/*')
         print(f"[Gemini Search Query] '{topic}' → '{keyword}'")
         return keyword
     except Exception as e:
