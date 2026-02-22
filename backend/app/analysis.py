@@ -42,10 +42,15 @@ def extract_search_query(topic: str) -> str:
 
 
 def analyze_sentiment_articles(text):
-    prompt = f"Assuming both sentiments have properly generated, analyze the sentiment of the following collection \
+    prompt = f"You are a finanical analyst/short-term market analyst. Assuming both sentiments have properly \
+    generated, analyze the sentiment of the following collection \
         of article snippets. Respond with 'positive', 'negative', \
             or 'neutral'. Then, respond with a summary of the \
-                contents and the sentiment. If one sentiment hasn't generated, just mention how one sentiment failed due to server issues and relay what you said for the other sentiment.\
+                topic, the current news around the topic, and the current sentiment in addition \
+                to divergence analysis between forum posts and news articles. If one \
+                sentiment hasn't generated, \
+                just mention how one sentiment failed due to server issues and relay \
+                what you said for the other sentiment.\
                     Respond without bias.:\n{text}"
     try:
         print("Analyzing sentiment of articles...")
@@ -205,5 +210,5 @@ if __name__ == "__main__":
     topic = "When will Cluely officially announce an IPO?"
     #brave_search_discussions(extract_search_query(topic))
     #newsdataio_search_news(topic)
-    #main(topic)
-    extract_search_query(topic)
+    main(topic)
+    #extract_search_query(topic)
