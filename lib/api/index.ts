@@ -1,6 +1,16 @@
 export { API_BASE_URL, useMockData, apiUrl } from "./config"
-export { getMarkets, getMarketById } from "./markets"
-export type { MarketsPage } from "./markets"
+export {
+  getMarkets,
+  getMarketById,
+  getMarketSentiment,
+  getAnalysisNews,
+  getAnalysisDiscussions,
+} from "./markets"
+export type {
+  MarketsPage,
+  AnalysisNewsItem,
+  AnalysisDiscussion,
+} from "./markets"
 export { getPositions, getUserBalance } from "./portfolio"
 export { getNews, getNewsForMarket } from "./news"
 export { getOrderbook, buildOrderbookFromMarket } from "./orderbook"

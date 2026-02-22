@@ -12,7 +12,10 @@ import { NewsPanel } from "@/components/news-panel"
 import { MarketAnalytics } from "@/components/market-analytics"
 import { Orderbook } from "@/components/orderbook"
 import { MarketDescription } from "@/components/market-description"
+import { MarketSentiment } from "@/components/market_analysis"
+import { AnalysisNewsPanel } from "@/components/analysis-news-panel"
 import type { Market, NewsItem } from "@/lib/types"
+import type { AnalysisNewsItem, AnalysisDiscussion } from "@/lib/api"
 
 function formatVolume(val: number) {
   if (val >= 1_000_000) return `$${(val / 1_000_000).toFixed(1)}M`
@@ -37,9 +40,12 @@ function useDaysUntil(date: string) {
 interface MarketDetailProps {
   market: Market
   news: NewsItem[]
+  sentiment: string
+  analysisNews: AnalysisNewsItem[]
+  analysisDiscussions: AnalysisDiscussion[]
 }
 
-export function MarketDetail({ market, news }: MarketDetailProps) {
+export function MarketDetail({ market, news, sentiment, analysisNews, analysisDiscussions }: MarketDetailProps) {
   const isPositive = market.change24h >= 0
   const daysLabel = useDaysUntil(market.endDate)
 
@@ -128,6 +134,9 @@ export function MarketDetail({ market, news }: MarketDetailProps) {
         </Card>
       </div>
 
+      {/* Market Sentiment - above chart */}
+      <MarketSentiment text={sentiment} />
+
       {/* Main content grid */}
       <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
         <div className="flex flex-col gap-6">
@@ -160,7 +169,7 @@ export function MarketDetail({ market, news }: MarketDetailProps) {
         {/* Sidebar */}
         <div className="flex flex-col gap-6">
           <OrderForm market={market} />
-          <NewsPanel news={news} />
+          <AnalysisNewsPanel news={analysisNews} discussions={analysisDiscussions} />
         </div>
       </div>
     </div>

@@ -4,10 +4,17 @@ Serves the same contract as the Next.js frontend expects when NEXT_PUBLIC_API_UR
 
 Run: uvicorn app.main:app --reload --port 8000
 """
-from fastapi import FastAPI
+import os
+import json
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers import markets, portfolio, news, auth, bets, wallet
+from app.analysis import main as analyze_main
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+NEWSDATA_PATH = os.path.join(BASE_DIR, "newsdata.json")
+REDDITDATA_PATH = os.path.join(BASE_DIR, "redditdata.json")
 
 app = FastAPI(
     title="UniFeed API",
@@ -39,3 +46,35 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+# ─── Analysis endpoints ───────────────────────────────────────────
+
+@app.post("/analyze/")
+def analyze_topic(topic: str = Query(...)):
+    result = analyze_main(topic)
+    return {"result": result}
+
+
+@app.get("/newsdata/")
+def get_newsdata(topic: str = Query(...)):
+    try:
+        with open(NEWSDATA_PATH, "r") as f:
+            data = json.load(f)
+            if data.get("topic") != topic:
+                return {"status": "not ready", "newsdata": None}
+        return {"status": "ready", "newsdata": data}
+    except FileNotFoundError:
+        return {"status": "not ready", "newsdata": None}
+
+
+@app.get("/redditData/")
+def get_redditdata(topic: str = Query(...)):
+    try:
+        with open(REDDITDATA_PATH, "r") as f:
+            data = json.load(f)
+            if data.get("topic") != topic:
+                return {"status": "not ready", "redditdata": None}
+        return {"status": "ready", "redditdata": data}
+    except FileNotFoundError:
+        return {"status": "not ready", "redditdata": None}
