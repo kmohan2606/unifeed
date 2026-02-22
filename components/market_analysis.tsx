@@ -1,5 +1,5 @@
 import { Spinner } from "@/components/spinner"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
 interface MarketSentimentProps {
   text: string
@@ -7,11 +7,13 @@ interface MarketSentimentProps {
 
 export function MarketSentiment({ text }: MarketSentimentProps) {
   return (
-    <Card className="border-border bg-card mb-2">
-      <CardContent className="flex items-center gap-2 p-3">
-        <span className="text-xs font-semibold text-muted-foreground">Market Sentiment:</span>
+    <Card className="border-border bg-card">
+      <CardHeader className="pb-2">
+        <h3 className="text-sm font-medium text-foreground">Market Sentiment</h3>
+      </CardHeader>
+      <CardContent className="pt-0">
         {text
-          ? <span className="text-sm text-foreground">{text}</span>
+          ? <p className="text-xs text-foreground leading-relaxed">{text}</p>
           : <Spinner />}
       </CardContent>
     </Card>

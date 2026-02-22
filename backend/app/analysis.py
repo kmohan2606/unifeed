@@ -110,6 +110,7 @@ def brave_search_discussions(topic, original_topic=None):
         "result_filter": "discussions"
     }
     print("Searching for online discussions...")
+    response = None
     response = requests.get(
         "https://api.search.brave.com/res/v1/web/search",
         headers=headers,
@@ -152,6 +153,7 @@ def newsdataio_search_news(topic, original_topic=None):
         "removeduplicate": 1,
     }
 
+    response = None
     response = requests.get(
         "https://newsdata.io/api/1/latest",
         params=params,

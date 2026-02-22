@@ -177,9 +177,6 @@ export function MarketDetail({ market, news }: MarketDetailProps) {
         </Card>
       </div>
 
-      {/* Market Sentiment - above chart */}
-      <MarketSentiment text={sentiment} />
-
       {/* Main content grid */}
       <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
         <div className="flex flex-col gap-6">
@@ -189,6 +186,9 @@ export function MarketDetail({ market, news }: MarketDetailProps) {
               <PriceChart data={market.priceHistory} />
             </CardContent>
           </Card>
+
+          {/* Market Sentiment - below chart */}
+          <MarketSentiment text={sentiment} />
 
           {/* Analytics */}
           <MarketAnalytics market={market} />
