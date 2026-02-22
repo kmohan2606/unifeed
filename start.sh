@@ -11,8 +11,9 @@ fi
 cd backend
 if [ ! -d ".venv" ]; then
   python3 -m venv .venv
-  .venv/bin/pip install -r requirements.txt -q
 fi
+# Always sync backend deps; requirements may change between runs.
+.venv/bin/pip install -r requirements.txt -q
 .venv/bin/uvicorn app.main:app --reload --port 8000 &
 BACKEND_PID=$!
 cd ..

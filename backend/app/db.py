@@ -63,6 +63,17 @@ def _init_db():
         )
     """)
 
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS user_settings (
+            user_id INTEGER PRIMARY KEY REFERENCES users(id),
+            kalshi_api_key TEXT,
+            kalshi_api_secret TEXT,
+            preferred_payment_token TEXT,
+            preferred_payment_chain_id INTEGER,
+            kalshi_balance REAL NOT NULL DEFAULT 500.0
+        )
+    """)
+
     conn.commit()
     conn.close()
 
@@ -124,6 +135,19 @@ def get_balance(user_id):
     row = conn.execute("SELECT balance FROM users WHERE id = ?", (user_id,)).fetchone()
     conn.close()
     return row["balance"] if row else 0.0
+
+
+def add_balance(user_id, amount):
+    if amount <= 0:
+        return get_balance(user_id)
+    conn = _connect()
+    try:
+        conn.execute("UPDATE users SET balance = balance + ? WHERE id = ?", (amount, user_id))
+        conn.commit()
+        row = conn.execute("SELECT balance FROM users WHERE id = ?", (user_id,)).fetchone()
+        return row["balance"] if row else 0.0
+    finally:
+        conn.close()
 
 
 # ── Bet helpers ───────────────────────────────────────────────

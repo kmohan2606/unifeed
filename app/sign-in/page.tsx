@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { Activity } from "lucide-react"
 import { SignInForm } from "@/components/sign-in-form"
+import { SiteLogo } from "@/components/site-logo"
 
 export default function SignInPage() {
   return (
@@ -8,9 +8,7 @@ export default function SignInPage() {
       <div className="w-full max-w-sm">
         <div className="mb-8 flex flex-col items-center gap-3">
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <Activity className="h-5 w-5 text-primary-foreground" />
-            </div>
+            <SiteLogo className="h-10 w-10 rounded-lg" />
           </Link>
           <h1 className="text-2xl font-bold tracking-tight text-foreground">Welcome back</h1>
           <p className="text-sm text-muted-foreground">Sign in to your UniFeed account</p>

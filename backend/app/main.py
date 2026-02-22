@@ -1,13 +1,14 @@
-"""
-UniFeed API backend (Python/FastAPI).
-Serves the same contract as the Next.js frontend expects when NEXT_PUBLIC_API_URL is set.
+from pathlib import Path
 
-Run: uvicorn app.main:app --reload --port 8000
-"""
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import markets, portfolio, news, auth, bets, wallet
+# Ensure the backend always reads project-root .env
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[2] / ".env")
+
+from app.routers import markets, portfolio, news, auth, bets, wallet, swap
+from app import api_server
 
 app = FastAPI(
     title="UniFeed API",
@@ -29,6 +30,8 @@ app.include_router(portfolio.router)
 app.include_router(news.router)
 app.include_router(bets.router)
 app.include_router(wallet.router)
+app.include_router(swap.router)
+app.include_router(api_server.router)
 
 
 @app.get("/")

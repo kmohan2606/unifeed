@@ -84,6 +84,18 @@ class NewsItem(BaseModel):
     model_config = {"populate_by_name": True}
 
 
+class MarketSentimentResponse(BaseModel):
+    market_id: str | None = Field(None, alias="marketId")
+    topic: str
+    status: str
+    news_sentiment_text: str = Field(alias="newsSentimentText")
+    discussion_sentiment_text: str = Field(alias="discussionSentimentText")
+    combined_sentiment_text: str = Field(alias="combinedSentimentText")
+    error: str | None = None
+
+    model_config = {"populate_by_name": True}
+
+
 class UserBalance(BaseModel):
     total: float
     available: float

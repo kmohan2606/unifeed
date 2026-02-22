@@ -1,13 +1,21 @@
-import Link from "next/link"
-import { Activity, ArrowRight, BarChart3, Zap, Shield, Globe, TrendingUp, Layers } from "lucide-react"
-import { Button } from "@/components/ui/button"
-
-const stats = [
-  { label: "Markets Aggregated", value: "2,400+" },
-  { label: "Total Volume", value: "$1.2B+" },
-  { label: "Avg. Savings per Trade", value: "3.2%" },
-  { label: "Platforms Connected", value: "2" },
-]
+import Link from "next/link";
+import {
+  ArrowRight,
+  BarChart3,
+  Zap,
+  Shield,
+  Globe,
+  TrendingUp,
+  Layers,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { LandingNavActions } from "@/components/landing-nav-actions";
+import {
+  LandingHeroActions,
+  LandingBottomActions,
+} from "@/components/landing-cta-actions";
+import { LandingStats } from "@/components/landing-stats";
+import { SiteLogo } from "@/components/site-logo";
 
 const features = [
   {
@@ -34,13 +42,31 @@ const features = [
     description:
       "Track your positions across every exchange in a single dashboard. See real-time P&L, allocations, and performance metrics.",
   },
-]
+];
 
 const marketPreviews = [
-  { title: "Fed rate cut in March 2026?", yesKalshi: 62, yesPoly: 59, volume: "$5.5M", change: "+2.4%" },
-  { title: "Bitcoin over $150K by Q2?", yesKalshi: 34, yesPoly: 37, volume: "$13.1M", change: "-1.8%" },
-  { title: "Nvidia stock exceeds $200?", yesKalshi: 55, yesPoly: 52, volume: "$9.9M", change: "+4.1%" },
-]
+  {
+    title: "Fed rate cut in March 2026?",
+    yesKalshi: 62,
+    yesPoly: 59,
+    volume: "$5.5M",
+    change: "+2.4%",
+  },
+  {
+    title: "Bitcoin over $150K by Q2?",
+    yesKalshi: 34,
+    yesPoly: 37,
+    volume: "$13.1M",
+    change: "-1.8%",
+  },
+  {
+    title: "Nvidia stock exceeds $200?",
+    yesKalshi: 55,
+    yesPoly: 52,
+    volume: "$9.9M",
+    change: "+4.1%",
+  },
+];
 
 export default function LandingPage() {
   return (
@@ -48,30 +74,32 @@ export default function LandingPage() {
       {/* Navigation */}
       <header className="sticky top-0 z-50 flex h-14 items-center justify-between border-b border-border bg-card/80 px-4 backdrop-blur-sm lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <Activity className="h-4 w-4 text-primary-foreground" />
-          </div>
-          <span className="text-lg font-semibold tracking-tight text-foreground">UniFeed</span>
+          <SiteLogo className="h-8 w-8 rounded-lg" />
+          <span className="text-lg font-semibold tracking-tight text-foreground">
+            UniFeed
+          </span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
-          <a href="#features" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+          <a
+            href="#features"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
             Features
           </a>
-          <a href="#markets" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+          <a
+            href="#markets"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
             Markets
           </a>
-          <a href="#how-it-works" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+          <a
+            href="#how-it-works"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
             How It Works
           </a>
         </nav>
-        <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/sign-in">Sign In</Link>
-          </Button>
-          <Button size="sm" asChild>
-            <Link href="/sign-up">Get Started</Link>
-          </Button>
-        </div>
+        <LandingNavActions />
       </header>
 
       <main className="flex-1">
@@ -79,45 +107,35 @@ export default function LandingPage() {
         <section className="flex flex-col items-center px-4 pb-16 pt-20 text-center lg:px-8 lg:pt-32 lg:pb-24">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5">
             <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-            <span className="text-xs font-medium text-muted-foreground">Now aggregating Kalshi + Polymarket</span>
+            <span className="text-xs font-medium text-muted-foreground">
+              Now aggregating <span className="text-kalshi">Kalshi</span> +{" "}
+              <span className="text-polymarket">Polymarket</span>
+            </span>
           </div>
           <h1 className="max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            One Platform for Every Prediction Market
+            One Platform Every Prediction Market
           </h1>
           <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            Compare prices across exchanges, route orders for the best deal, and manage your entire portfolio from a single dashboard. No more switching tabs.
+            Compare prices across exchanges, route orders for the best deal, and
+            manage your entire portfolio from a single dashboard. No more
+            switching tabs.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
-            <Button size="lg" asChild>
-              <Link href="/sign-up" className="flex items-center gap-2">
-                Start Trading
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link href="/dashboard">Explore Markets</Link>
-            </Button>
-          </div>
+          <LandingHeroActions />
         </section>
 
         {/* Stats Bar */}
-        <section className="border-y border-border bg-card/50">
-          <div className="mx-auto grid max-w-5xl grid-cols-2 divide-x divide-border md:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center gap-1 px-4 py-6">
-                <span className="text-2xl font-bold font-mono text-foreground">{stat.value}</span>
-                <span className="text-xs text-muted-foreground">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </section>
+        <LandingStats />
 
         {/* Live Market Preview */}
         <section id="markets" className="px-4 py-16 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-5xl">
             <div className="mb-10 text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">Live Market Prices</h2>
-              <p className="mt-2 text-sm text-muted-foreground">Real-time price comparison across platforms</p>
+              <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                Live Market Prices
+              </h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Real-time price comparison across platforms
+              </p>
             </div>
             <div className="overflow-hidden rounded-xl border border-border bg-card">
               <div className="grid grid-cols-[1fr_auto_auto_auto_auto] items-center gap-4 border-b border-border bg-secondary/50 px-5 py-3 text-xs font-medium text-muted-foreground">
@@ -132,13 +150,23 @@ export default function LandingPage() {
                   key={i}
                   className="grid grid-cols-[1fr_auto_auto_auto_auto] items-center gap-4 border-b border-border px-5 py-4 last:border-b-0"
                 >
-                  <span className="text-sm font-medium text-foreground">{m.title}</span>
-                  <span className="text-right font-mono text-sm text-foreground">{m.yesKalshi}c</span>
-                  <span className="text-right font-mono text-sm text-foreground">{m.yesPoly}c</span>
-                  <span className="text-right font-mono text-sm text-muted-foreground">{m.volume}</span>
+                  <span className="text-sm font-medium text-foreground">
+                    {m.title}
+                  </span>
+                  <span className="text-right font-mono text-sm text-foreground">
+                    {m.yesKalshi}c
+                  </span>
+                  <span className="text-right font-mono text-sm text-foreground">
+                    {m.yesPoly}c
+                  </span>
+                  <span className="text-right font-mono text-sm text-muted-foreground">
+                    {m.volume}
+                  </span>
                   <span
                     className={`text-right font-mono text-sm ${
-                      m.change.startsWith("+") ? "text-primary" : "text-destructive"
+                      m.change.startsWith("+")
+                        ? "text-primary"
+                        : "text-destructive"
                     }`}
                   >
                     {m.change}
@@ -158,7 +186,10 @@ export default function LandingPage() {
         </section>
 
         {/* Features */}
-        <section id="features" className="border-t border-border bg-card/30 px-4 py-16 lg:px-8 lg:py-24">
+        <section
+          id="features"
+          className="border-t border-border bg-card/30 px-4 py-16 lg:px-8 lg:py-24"
+        >
           <div className="mx-auto max-w-5xl">
             <div className="mb-12 text-center">
               <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
@@ -177,8 +208,12 @@ export default function LandingPage() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                     <feature.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="text-base font-semibold text-foreground">{feature.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
+                  <h3 className="text-base font-semibold text-foreground">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {feature.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -186,11 +221,18 @@ export default function LandingPage() {
         </section>
 
         {/* How it Works */}
-        <section id="how-it-works" className="border-t border-border px-4 py-16 lg:px-8 lg:py-24">
+        <section
+          id="how-it-works"
+          className="border-t border-border px-4 py-16 lg:px-8 lg:py-24"
+        >
           <div className="mx-auto max-w-3xl">
             <div className="mb-12 text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">How It Works</h2>
-              <p className="mt-2 text-sm text-muted-foreground">Three steps to smarter prediction market trading</p>
+              <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                How It Works
+              </h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Three steps to smarter prediction market trading
+              </p>
             </div>
             <div className="flex flex-col gap-8">
               {[
@@ -224,8 +266,12 @@ export default function LandingPage() {
                     <div className="mt-2 h-full w-px bg-border" />
                   </div>
                   <div className="pb-8">
-                    <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                    <h3 className="text-base font-semibold text-foreground">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -240,19 +286,10 @@ export default function LandingPage() {
               Ready to Trade Smarter?
             </h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Join traders who save an average of 3.2% per trade by aggregating prediction markets.
+              Join traders who save an average of 3.2% per trade by aggregating
+              prediction markets.
             </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
-              <Button size="lg" asChild>
-                <Link href="/sign-up" className="flex items-center gap-2">
-                  Create Free Account
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/sign-in">Sign In</Link>
-              </Button>
-            </div>
+            <LandingBottomActions />
           </div>
         </section>
       </main>
@@ -261,16 +298,17 @@ export default function LandingPage() {
       <footer className="border-t border-border bg-card px-4 py-8 lg:px-8">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 md:flex-row">
           <div className="flex items-center gap-2">
-            <div className="flex h-6 w-6 items-center justify-center rounded bg-primary">
-              <Activity className="h-3 w-3 text-primary-foreground" />
-            </div>
-            <span className="text-sm font-semibold text-foreground">UniFeed</span>
+            <SiteLogo className="h-6 w-6 rounded" />
+            <span className="text-sm font-semibold text-foreground">
+              UniFeed
+            </span>
           </div>
           <p className="text-xs text-muted-foreground">
-            Prediction markets involve risk. This platform is for informational purposes.
+            Prediction markets involve risk. This platform is for informational
+            purposes.
           </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }

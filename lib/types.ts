@@ -36,6 +36,10 @@ export interface Market {
     kalshi?: string
     polymarket?: string
   }
+  platformIds?: {
+    kalshi: string | null
+    polymarket: string | null
+  }
 }
 
 export interface Position {

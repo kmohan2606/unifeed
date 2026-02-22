@@ -111,6 +111,8 @@ class AsyncKalshiCollector:
                     event_category = 'General Affairs'
                 elif event_category in ('Crypto', 'Financials', 'Economics'):
                     event_category = 'Economics'
+                elif event_category in ('Climate and Weather',):
+                    event_category = 'Weather'
 
                 if event_category not in processed:
                     processed[event_category] = []
@@ -122,12 +124,28 @@ class AsyncKalshiCollector:
                     title = market['title']
                     rules_primary = market['rules_primary']
                     rules_secondary = market['rules_secondary']
+                    
 
                     if title[-1] not in punc:
                         title += '.'
 
 
-                    processed[event_category].append((ticker, title, title + " " + rules_primary + " " + rules_secondary))
+                    processed[event_category].append({
+                        "ticker": ticker,
+                        "title": title,
+                        "description": f"{market.get('rules_primary', '')} {market.get('rules_secondary', '')}".strip(),
+                        "yes_ask": market.get("yes_ask", 0),
+                        "yes_bid": market.get("yes_bid", 0),
+                        "no_ask": market.get("no_ask", 0),
+                        "no_bid": market.get("no_bid", 0),
+                        "last_price": market.get("last_price", 0),
+                        "prev_price": market.get("previous_price", 0),
+                        "volume": market.get("volume", 0),
+                        "volume_24h": market.get("volume_24h", 0),
+                        "open_interest": market.get("open_interest", 0),
+                        "end_date": market.get("close_time", "2027-12-31T00:00:00Z"),
+                        "status": market.get("status", "open"),
+                    })
 
                 total_markets = 0
                 
@@ -168,6 +186,8 @@ class AsyncKalshiCollector:
                                             event_category = 'General Affairs'
                                         elif event_category in ('Crypto', 'Financials', 'Economics'):
                                             event_category = 'Economics'
+                                        elif event_category in ('Climate and Weather',):
+                                            event_category = 'Weather'
                                             
                                         if event_category not in processed:
                                             processed[event_category] = []
@@ -183,8 +203,22 @@ class AsyncKalshiCollector:
                                             if title and title[-1] not in punc:
                                                 title += '.'
                                                 
-                                            full_description = f"{title} {rules_primary} {rules_secondary}"
-                                            processed[event_category].append((ticker, title, full_description))
+                                            processed[event_category].append({
+                                                "ticker": ticker,
+                                                "title": title,
+                                                "description": f"{rules_primary} {rules_secondary}".strip(),
+                                                "yes_ask": market.get("yes_ask", 0),
+                                                "yes_bid": market.get("yes_bid", 0),
+                                                "no_ask": market.get("no_ask", 0),
+                                                "no_bid": market.get("no_bid", 0),
+                                                "last_price": market.get("last_price", 0),
+                                                "prev_price": market.get("previous_price", 0),
+                                                "volume": market.get("volume", 0),
+                                                "volume_24h": market.get("volume_24h", 0),
+                                                "open_interest": market.get("open_interest", 0),
+                                                "end_date": market.get("close_time", "2027-12-31T00:00:00Z"),
+                                                "status": market.get("status", "open"),
+                                            })
                                     
                                     cursor = data.get('cursor')
                                     
@@ -205,8 +239,8 @@ class AsyncKalshiCollector:
             return
         out = {}
         for category, markets in categorized.items():
-            out[category] = [list(m) for m in markets]
-        path = Path("data/kalshi_markets.json")
+            out[category] = list(markets)
+        path = Path(__file__).resolve().parents[1] / "data" / "kalshi_markets.json"
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             json.dump(out, f, indent=2, ensure_ascii=False)

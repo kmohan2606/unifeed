@@ -1,63 +1,71 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useCallback, useRef } from "react"
-import { MarketCard } from "@/components/market-card"
-import { MarketFilters } from "@/components/market-filters"
-import { getMarkets } from "@/lib/api/markets"
-import type { Market } from "@/lib/types"
-import { Loader2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect, useCallback, useRef } from "react";
+import { MarketCard } from "@/components/market-card";
+import { MarketFilters } from "@/components/market-filters";
+import { getMarkets } from "@/lib/api/markets";
+import type { Market } from "@/lib/types";
+import { Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const PAGE_SIZE = 25
+const PAGE_SIZE = 25;
 
 export function Dashboard() {
-  const [activeCategory, setActiveCategory] = useState("All")
-  const [markets, setMarkets] = useState<Market[]>([])
-  const [page, setPage] = useState(1)
-  const [totalPages, setTotalPages] = useState(1)
-  const [total, setTotal] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
-  const initialLoad = useRef(true)
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [markets, setMarkets] = useState<Market[]>([]);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [total, setTotal] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+  const initialLoad = useRef(true);
 
-  const fetchPage = useCallback(async (cat: string, pg: number, append: boolean) => {
-    setIsLoading(true)
-    try {
-      const data = await getMarkets(cat, pg, PAGE_SIZE)
-      setMarkets((prev) => (append ? [...prev, ...data.markets] : data.markets))
-      setTotalPages(data.totalPages)
-      setTotal(data.total)
-      setPage(pg)
-    } catch (e) {
-      console.error("Failed to fetch markets:", e)
-    } finally {
-      setIsLoading(false)
-    }
-  }, [])
+  const fetchPage = useCallback(
+    async (cat: string, pg: number, append: boolean) => {
+      setIsLoading(true);
+      try {
+        const data = await getMarkets(cat, pg, PAGE_SIZE);
+        setMarkets((prev) =>
+          append ? [...prev, ...data.markets] : data.markets,
+        );
+        setTotalPages(data.totalPages);
+        setTotal(data.total);
+        setPage(pg);
+      } catch (e) {
+        console.error("Failed to fetch markets:", e);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
-    fetchPage(activeCategory, 1, false)
-  }, [activeCategory, fetchPage])
+    fetchPage(activeCategory, 1, false);
+  }, [activeCategory, fetchPage]);
 
   function handleCategoryChange(cat: string) {
-    setActiveCategory(cat)
-    setPage(1)
-    setMarkets([])
+    setActiveCategory(cat);
+    setPage(1);
+    setMarkets([]);
   }
 
   function handleLoadMore() {
     if (page < totalPages && !isLoading) {
-      fetchPage(activeCategory, page + 1, true)
+      fetchPage(activeCategory, page + 1, true);
     }
   }
 
-  const hasMore = page < totalPages
+  const hasMore = page < totalPages;
 
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">Markets</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-foreground">
+          Markets
+        </h1>
         <p className="text-sm text-muted-foreground">
-          {total.toLocaleString()} aggregated prediction markets across Kalshi and Polymarket
+          {total.toLocaleString()} aggregated prediction markets across Kalshi
+          and Polymarket
         </p>
       </div>
 
@@ -80,7 +88,9 @@ export function Dashboard() {
 
       {!isLoading && markets.length === 0 && (
         <div className="flex flex-col items-center justify-center rounded-lg border border-border bg-card py-16">
-          <p className="text-sm text-muted-foreground">No markets found for this category.</p>
+          <p className="text-sm text-muted-foreground">
+            No markets found for this category.
+          </p>
         </div>
       )}
 
@@ -99,5 +109,5 @@ export function Dashboard() {
         </div>
       )}
     </div>
-  )
+  );
 }

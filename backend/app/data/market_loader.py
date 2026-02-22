@@ -103,13 +103,30 @@ def _load_all():
 
     kalshi_path = DATA_DIR / "kalshi_markets.json"
     poly_path = DATA_DIR / "polymarket_markets.json"
+    fallback_dir = Path(__file__).parent / "collectors" / "data"
+
+    # Backward-compatible fallback if files were previously generated in collectors/data.
+    if not kalshi_path.exists():
+        fallback_kalshi_path = fallback_dir / "kalshi_markets.json"
+        if fallback_kalshi_path.exists():
+            kalshi_path = fallback_kalshi_path
+
+    if not poly_path.exists():
+        fallback_poly_path = fallback_dir / "polymarket_markets.json"
+        if fallback_poly_path.exists():
+            poly_path = fallback_poly_path
 
     if kalshi_path.exists():
         with open(kalshi_path) as f:
             kalshi_data = json.load(f)
         for cat in KALSHI_CATEGORIES:
             for entry in kalshi_data.get(cat, []):
-                ticker, title, desc = entry[0], entry[1], entry[2]
+                if isinstance(entry, dict):
+                    ticker = entry.get("ticker", "")
+                    title = entry.get("title", "")
+                    desc = entry.get("description", "")
+                else:
+                    ticker, title, desc = entry[0], entry[1], entry[2]
                 if ticker in seen_ids:
                     continue
                 seen_ids.add(ticker)
@@ -120,8 +137,13 @@ def _load_all():
             poly_data = json.load(f)
         for cat in POLYMARKET_CATEGORIES:
             for entry in poly_data.get(cat, []):
-                title, desc = entry[0], entry[1]
-                mid = _slugify(title)
+                if isinstance(entry, dict):
+                    title = entry.get("title", "")
+                    desc = entry.get("description", "")
+                    mid = entry.get("id") or entry.get("slug") or _slugify(title)
+                else:
+                    title, desc = entry[0], entry[1]
+                    mid = _slugify(title)
                 if mid in seen_ids:
                     mid = mid + "-" + str(random.randint(1000, 9999))
                 seen_ids.add(mid)

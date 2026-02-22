@@ -1,32 +1,34 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { ChevronDown, FileText, Scale, ExternalLink } from "lucide-react"
-import { cn } from "@/lib/utils"
-import type { Market } from "@/lib/types"
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ChevronDown, FileText, Scale, ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
+import type { Market } from "@/lib/types";
 
 export function MarketDescription({ market }: { market: Market }) {
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <Card className="border-border bg-card">
+    <Card className="border-border bg-card py-0 gap-0">
       <button
         type="button"
-        onClick={() => setIsExpanded(prev => !prev)}
+        onClick={() => setIsExpanded((prev) => !prev)}
         className={cn(
           "flex w-full items-center justify-between px-4 text-left transition-colors hover:bg-accent/30",
-          isExpanded ? "py-3.5" : "py-1.5"
+          isExpanded ? "py-3.5" : "py-1.5",
         )}
       >
         <div className="flex items-center gap-2">
           <FileText className="h-4 w-4 text-primary" />
-          <h3 className="text-sm font-semibold text-foreground">Description & Rules</h3>
+          <h3 className="text-sm font-semibold text-foreground">
+            Description & Rules
+          </h3>
         </div>
         <ChevronDown
           className={cn(
             "h-4 w-4 text-muted-foreground transition-transform duration-200",
-            isExpanded && "rotate-180"
+            isExpanded && "rotate-180",
           )}
         />
       </button>
@@ -34,7 +36,7 @@ export function MarketDescription({ market }: { market: Market }) {
       <div
         className={cn(
           "grid transition-all duration-200 ease-in-out",
-          isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
         )}
       >
         <div className="overflow-hidden">
@@ -60,7 +62,10 @@ export function MarketDescription({ market }: { market: Market }) {
                 </div>
                 <ul className="flex flex-col gap-2">
                   {market.rules.map((rule, i) => (
-                    <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-foreground/80">
+                    <li
+                      key={i}
+                      className="flex gap-2.5 text-sm leading-relaxed text-foreground/80"
+                    >
                       <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary">
                         {i + 1}
                       </span>
@@ -83,9 +88,9 @@ export function MarketDescription({ market }: { market: Market }) {
                       href={market.platformUrls.kalshi}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-md border border-chart-3/30 bg-chart-3/10 px-3.5 py-2 text-xs font-medium text-chart-3 transition-colors hover:bg-chart-3/20"
+                      className="inline-flex items-center gap-2 rounded-md border border-kalshi/30 bg-kalshi/10 px-3.5 py-2 text-xs font-medium text-kalshi transition-colors hover:bg-kalshi/20"
                     >
-                      <span className="h-2 w-2 rounded-full bg-chart-3" />
+                      <span className="h-2 w-2 rounded-full bg-kalshi" />
                       Trade on Kalshi
                       <ExternalLink className="h-3 w-3" />
                     </a>
@@ -95,9 +100,9 @@ export function MarketDescription({ market }: { market: Market }) {
                       href={market.platformUrls.polymarket}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-md border border-chart-5/30 bg-chart-5/10 px-3.5 py-2 text-xs font-medium text-chart-5 transition-colors hover:bg-chart-5/20"
+                      className="inline-flex items-center gap-2 rounded-md border border-polymarket/30 bg-polymarket/10 px-3.5 py-2 text-xs font-medium text-polymarket transition-colors hover:bg-polymarket/20"
                     >
-                      <span className="h-2 w-2 rounded-full bg-chart-5" />
+                      <span className="h-2 w-2 rounded-full bg-polymarket" />
                       Trade on Polymarket
                       <ExternalLink className="h-3 w-3" />
                     </a>
@@ -109,5 +114,5 @@ export function MarketDescription({ market }: { market: Market }) {
         </div>
       </div>
     </Card>
-  )
+  );
 }

@@ -1,5 +1,6 @@
 import requests
 import json
+from pathlib import Path
 
 
 class PolymarketCollector:
@@ -80,8 +81,27 @@ class PolymarketCollector:
 
                     title = market["question"]
                     description = market["description"]
+                    raw_prices = market.get("outcomePrices", "[0.5, 0.5]")
+                    prices = json.loads(raw_prices)
                     for category in categories:
-                        self.marketsByCategory[category].append((title, title + description))
+                        self.marketsByCategory[category].append({
+                            "id": market.get("id", ""),
+                            "slug": market.get("slug", ""),
+                            "title": title,
+                            "description": description,
+                            "yes_price": float(prices[0]) if len(prices) > 0 else 0.5,
+                            "no_price": float(prices[1]) if len(prices) > 1 else 0.5,
+                            "volume": market.get("volumeNum", 0.0),
+                            "volume_24h": market.get("volume24hr", 0.0),
+                            "liquidity": market.get("liquidityNum", 0.0),
+                            "end_date": market.get("endDateIso", "2027-12-31"),
+                            "best_bid": market.get("bestBid", 0.0),
+                            "best_ask": market.get("bestAsk", 0.0),
+                            "last_price": market.get("lastTradePrice", 0.0),
+                            "spread": market.get("spread", 0.0),
+                            "change_24h": market.get("oneDayPriceChange", 0.0),
+                            "tags": [t.get("label", "") for t in market.get("tags", [])],
+                        })
 
 
                 total_markets += len(data)
@@ -106,10 +126,12 @@ class PolymarketCollector:
             print("No markets to save")
             return
         
-        with open("data/polymarket_markets.json", 'w', encoding='utf-8') as f:
+        output_path = Path(__file__).resolve().parents[1] / "data" / "polymarket_markets.json"
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(self.marketsByCategory, f, indent=2, ensure_ascii=False)
 
-        print(f"\nSaved markets to data")
+        print(f"\nSaved markets to {output_path}")
 
     def print_summary(self):
         
