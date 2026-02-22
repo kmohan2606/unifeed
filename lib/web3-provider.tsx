@@ -8,7 +8,7 @@ import "@rainbow-me/rainbowkit/styles.css"
 
 const config = getDefaultConfig({
   appName: "UniFeed",
-  projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "unifeed-dev-placeholder",
+  projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "4a8c1db02e4c80d8ac679ca26d6fa0ed",
   chains: [mainnet, polygon, base, arbitrum],
   transports: {
     [mainnet.id]: http(),

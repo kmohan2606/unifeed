@@ -1,9 +1,9 @@
 {
     "type": "search",
     "query": {
-        "original": "Solana",
+        "original": "Al Shabab vs Al Hilal",
         "show_strict_warning": false,
-        "is_navigational": true,
+        "is_navigational": false,
         "is_geolocal": true,
         "local_decision": "mix",
         "is_news_breaking": false,
@@ -18,148 +18,7 @@
         "state": ""
     },
     "discussions": {
-        "type": "search",
-        "results": [
-            {
-                "title": "How to make a successful launch on pump.fun? : solana",
-                "url": "https://old.reddit.com/r/solana/comments/1gqtrsx/how_to_make_a_successful_launch_on_pumpfun/",
-                "is_source_local": false,
-                "is_source_both": false,
-                "description": "",
-                "language": "en",
-                "family_friendly": true,
-                "type": "discussion",
-                "subtype": "generic",
-                "is_live": false,
-                "meta_url": {
-                    "scheme": "https",
-                    "netloc": "old.reddit.com",
-                    "hostname": "old.reddit.com",
-                    "favicon": "https://imgs.search.brave.com/1WxEHgI35PHBzzj-3H2kkQuVOLUa0jZGk80MslJobo4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNmRmMjg5OWQ2/NWQ1ZTUzNGJiZTRh/ZTY0OWJmMWY2MDU3/N2QzNGZlNDNlNTAz/Y2VlYTM4YTNiNjU2/ZjczOWFkOC9vbGQu/cmVkZGl0LmNvbS8",
-                    "path": "\u203a r  \u203a solana  \u203a comments  \u203a 1gqtrsx  \u203a how_to_make_a_successful_launch_on_pumpfun"
-                },
-                "data": {
-                    "forum_name": "r/solana"
-                }
-            },
-            {
-                "title": "Is SOL worth investing in?",
-                "url": "https://www.reddit.com/r/CryptoMarkets/comments/1mkldb2/is_sol_worth_investing_in/",
-                "is_source_local": false,
-                "is_source_both": false,
-                "description": "Do you always miss the dip before looking for  \u201cworth\u201d?",
-                "fetched_content_timestamp": 1771340645,
-                "language": "en",
-                "family_friendly": true,
-                "type": "discussion",
-                "subtype": "generic",
-                "is_live": false,
-                "meta_url": {
-                    "scheme": "https",
-                    "netloc": "reddit.com",
-                    "hostname": "www.reddit.com",
-                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
-                    "path": "\u203a r  \u203a CryptoMarkets  \u203a comments  \u203a 1mkldb2  \u203a is_sol_worth_investing_in"
-                },
-                "age": "August 8, 2025",
-                "data": {
-                    "forum_name": "r/CryptoMarkets",
-                    "num_answers": 125,
-                    "score": "25",
-                    "title": "Is SOL worth investing in?",
-                    "question": "<p>I&#39;ve been interested in crypto for years but still, I know very little about it and how it works. But I&#39;ve been observing SOLANA now for maybe about 3 years and saw it just keep increasing in price. So I was thinking maybe I should put money on it and leave it for a couple of years and see how it go? What do you guys think? Is Sol worth putting money on and would it keep increasing in price?</p>",
-                    "top_comment": "Do you always miss the dip before looking for  \u201cworth\u201d?"
-                }
-            },
-            {
-                "title": "SOL is a shitstorm waiting to eat your money",
-                "url": "https://www.reddit.com/r/CryptoCurrency/comments/17cyv54/sol_is_a_shitstorm_waiting_to_eat_your_money/",
-                "is_source_local": false,
-                "is_source_both": false,
-                "description": "Inverse r/cc .",
-                "fetched_content_timestamp": 1771340645,
-                "language": "en",
-                "family_friendly": true,
-                "type": "discussion",
-                "subtype": "generic",
-                "is_live": false,
-                "meta_url": {
-                    "scheme": "https",
-                    "netloc": "reddit.com",
-                    "hostname": "www.reddit.com",
-                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
-                    "path": "\u203a r  \u203a CryptoCurrency  \u203a comments  \u203a 17cyv54  \u203a sol_is_a_shitstorm_waiting_to_eat_your_money"
-                },
-                "age": "November 10, 2023",
-                "data": {
-                    "forum_name": "r/CryptoCurrency",
-                    "num_answers": 640,
-                    "score": "309",
-                    "title": "SOL is a shitstorm waiting to eat your money",
-                    "question": "<p>what are people&#39;s opinions of Solana these days?</p><p>I personally still think it is hot trash that&#39;s propped up by VC money. A lot of the wrapped assets on the chain like WBTC were minted with backing held at FTX and that backing has since gone down the toilet. It feels like it&#39;s only a matter of time until the insolvency of those assets becomes more apparent. The bill comes due!If all the WBTC were to be moved from the SOL chain, the on-chain liquidity for its counterpart would not exist to cover the amount in circulation there and the peg would be lost.</p><p>The tech has been a long-running joke in the defi community and while recent updates are an objective improvement, it&#39;s still miles behind ETH and many of its layer 2 rollups.</p><p>I am amazed at the amount of bullish sentiment i see around SOL tokens, can someone make me understand how this token is not destined to fuck me out of my money if i go near it?</p><p>FTX still holds hundreds of millions of these tokens and will likely liquidate them to cover debtor obligations. It feels like people are flocking to become exit liquidity for this inevitable sell-off because of some short-term low liquidity pumps. I see that FTX custody party has staked about $130 million of its SOL to try and ease these concerns but who the fuck cares when they hold over $1 billion worth of this shit coin and need to sell sooner or later.</p><p>seems like money is moving into the ecosystem to attract short-term speculators to help bolster the available liquidity so that FTX can get a better price for when its time to sell.</p><p>Im short sold and averaging down the short on this pump, fuck this token lol</p><p>Update: I took some profits from the position on 11/2 when we pulled back from $45 to $39</p><p>Later my vpn saved me from staying in the position since it switched to USA without me noticing and my wallet got banned from DyDx for using the platform with web traffic from a blocked jurisdiction. That forced me to close around $43 and realize a net loss of about 10%</p><p>I have not opened a new short since. This play was of course not my only crypto position and even with the loss I\u2019m up ~16% across the board. Trading short SOL was not a great move though.</p>",
-                    "top_comment": "Inverse r/cc ."
-                }
-            },
-            {
-                "title": "Why SOL is Crashing Hard Right Now?",
-                "url": "https://www.reddit.com/r/CryptoMarkets/comments/1isly55/why_sol_is_crashing_hard_right_now/",
-                "is_source_local": false,
-                "is_source_both": false,
-                "description": "Well everything is crashing right now but yeah I guess SOL having a 14% drop in the last week is more notable than other alts who dropped like half that or less.",
-                "fetched_content_timestamp": 1771072112,
-                "language": "en",
-                "family_friendly": true,
-                "type": "discussion",
-                "subtype": "generic",
-                "is_live": false,
-                "meta_url": {
-                    "scheme": "https",
-                    "netloc": "reddit.com",
-                    "hostname": "www.reddit.com",
-                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
-                    "path": "\u203a r  \u203a CryptoMarkets  \u203a comments  \u203a 1isly55  \u203a why_sol_is_crashing_hard_right_now"
-                },
-                "age": "February 18, 2025",
-                "data": {
-                    "forum_name": "r/CryptoMarkets",
-                    "num_answers": 93,
-                    "score": "109",
-                    "title": "Why SOL is Crashing Hard Right Now?",
-                    "question": "<p>Solana is facing a major sell-off, and the reasons behind it are becoming clearer. Recent revelations have exposed serious issues involving key players in the ecosystem. The co-founder of Meteora has been linked to Hayden, the same individual responsible for the $100M LIBRA rug pull. They\u2019ve reportedly worked together on multiple memecoins, including Melania, with a lot of shady activity happening in the background. In response to the exposure, the Meteora founder has stepped down.</p><p>Adding to the chaos, DeFi Tuna has leaked screenshots and other evidence showing that previously trusted figures in the space have been involved in questionable activities. Jupiter, Meteora, and several major market makers are now under intense scrutiny. Reports suggest that this group of insiders has collectively pulled off over $300M in rug pulls in just the past few months.</p><p>Jupiter has announced an internal investigation, but they\u2019ve chosen a third-party law firm with past ties to FTX, raising concerns about how credible the investigation will be. Given that Meteora is a subsidiary of Jupiter, the situation looks even worse.</p><p>This kind of exposure is shaking confidence in Solana\u2019s DeFi ecosystem, drawing comparisons to the FTX collapse. The future of SOL now largely depends on how the market reacts, especially in relation to ETH. This could mark a turning point for Solana, or it might just be another crisis that fades from memory in a few weeks.</p>",
-                    "top_comment": "Well everything is crashing right now but yeah I guess SOL having a 14% drop in the last week is more notable than other alts who dropped like half that or less."
-                }
-            },
-            {
-                "title": "Is it too late to invest in SOL?",
-                "url": "https://www.reddit.com/r/CryptoCurrency/comments/1gmpej2/is_it_too_late_to_invest_in_sol/",
-                "is_source_local": false,
-                "is_source_both": false,
-                "description": "The coin did a 25x and it's sitting at around 100 billion dollars marketcap, I'd say it's pretty late, yes. Can it do 2-5x? It can, but it can also do a -80%, it's not that good risk/reward.",
-                "fetched_content_timestamp": 1771340645,
-                "language": "en",
-                "family_friendly": true,
-                "type": "discussion",
-                "subtype": "generic",
-                "is_live": false,
-                "meta_url": {
-                    "scheme": "https",
-                    "netloc": "reddit.com",
-                    "hostname": "www.reddit.com",
-                    "favicon": "https://imgs.search.brave.com/U-eHNCapRHVNWWCVPPMTIvOofZULh0_A_FQKe8xTE4I/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8",
-                    "path": "\u203a r  \u203a CryptoCurrency  \u203a comments  \u203a 1gmpej2  \u203a is_it_too_late_to_invest_in_sol"
-                },
-                "age": "November 8, 2024",
-                "data": {
-                    "forum_name": "r/CryptoCurrency",
-                    "num_answers": 89,
-                    "score": "0",
-                    "title": "Is it too late to invest in SOL?",
-                    "question": "<p>Sorry for newb question. I blindly bought some BTC, ETH and XRP (I know) like 18 months ago without really knowing anything about crypto. For a total idiot with zero knowledge on crypto, I\u2019ve more than doubled my investment in 18 months. From what I\u2019ve read if you were to play it safe in the stock market, doubling your investment would take like 7 years.</p><p>Anywhoo, I\u2019m wondering if buying SOL would be really dumb right now because it\u2019s at its peak, or is the peak just about to begin and will I be kicking myself for missing out? Would\u2019ve been mad to buy a year ago but here we are</p>",
-                    "top_comment": "The coin did a 25x and it's sitting at around 100 billion dollars marketcap, I'd say it's pretty late, yes. Can it do 2-5x? It can, but it can also do a -80%, it's not that good risk/reward."
-                }
-            }
-        ],
-        "mutated_by_goggles": false
+        "results": []
     },
-    "topic": "SOL price  on Feb 27, 2026?"
+    "topic": "Al Shabab Saudi Club vs. Al Hilal Saudi Club: O/U 2.5"
 }
