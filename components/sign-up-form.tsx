@@ -90,17 +90,6 @@ export function SignUpForm() {
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-border" />
           </div>
-          <div className="relative flex justify-center">
-            <span className="bg-card px-3 text-xs text-muted-foreground">or continue with</span>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 gap-3">
-          <Button variant="outline" type="button" className="border-border text-foreground">
-            Google
-          </Button>
-          <Button variant="outline" type="button" className="border-border text-foreground">
-            GitHub
-          </Button>
         </div>
         <p className="text-center text-[11px] leading-relaxed text-muted-foreground">
           By creating an account, you agree to our Terms of Service and Privacy Policy.
