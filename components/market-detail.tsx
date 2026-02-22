@@ -39,10 +39,9 @@ function useDaysUntil(date: string) {
   return label
 }
 
-// ── Kick off analysis and track the topic being analyzed ─────────
+// ── Kick off analysis and return sentiment ────────────────────────
 
 function useMarketAnalysis(market: Market) {
-  const [topic, setTopic] = useState<string | null>(null)
   const [sentiment, setSentiment] = useState<string>("")
 
   useEffect(() => {
@@ -58,8 +57,6 @@ function useMarketAnalysis(market: Market) {
         const data = await res.json()
         // The /analyze/ endpoint returns { result: "<sentiment string>" }
         setSentiment(data.result ?? "")
-        // Only start polling once the backend has kicked off the scrape
-        setTopic(market.title)
       } catch (err) {
         console.error("[useMarketAnalysis] failed to start analysis:", err)
       }
@@ -69,7 +66,7 @@ function useMarketAnalysis(market: Market) {
     return () => { cancelled = true }
   }, [market.title])
 
-  return { topic, sentiment }
+  return { sentiment }
 }
 
 // ─────────────────────────────────────────────────────────────────
@@ -83,17 +80,17 @@ export function MarketDetail({ market, news }: MarketDetailProps) {
   const isPositive = market.change24h >= 0
   const daysLabel = useDaysUntil(market.endDate)
 
-  // 1. Trigger analysis + get sentiment
-  const { topic, sentiment } = useMarketAnalysis(market)
+  // 1. Trigger analysis + get sentiment (runs independently of news polling)
+  const { sentiment } = useMarketAnalysis(market)
 
-  // 2. Poll for news / discussion data only after analysis has started
+  // 2. Poll for news / discussion data immediately — don't wait for sentiment
   const {
     news: analysisNews,
     discussions: analysisDiscussions,
     newsReady,
     discussionsReady,
     error: analysisError,
-  } = useAnalysisData(topic)
+  } = useAnalysisData(market.title)
 
   return (
     <div className="flex flex-col gap-6">
